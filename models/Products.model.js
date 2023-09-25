@@ -1,7 +1,13 @@
 const mongoose = require('mongoose');
+const { BRAND, CATEGORY, CONDITION, CAMERATYPE, LENSTYPE, ACCESSORYTYPE } = ('../misc/enum.js')
+
 
 const productSchema = new mongoose.Schema({
   name: {
+    type: String,
+    required: true,
+  },
+  image: {
     type: String,
     required: true,
   },
@@ -15,30 +21,32 @@ const productSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    enum: ['Camera', 'Lens', 'Accessory'],
+    enum: CATEGORY,
     required: true,
   },
   condition: {
     type: String,
-    enum: ['New', 'Used'],
+    enum: CONDITION,
     default: 'New',
   },
-  brand: String,
+  brand: {
+    type: String,
+    enum: BRAND,
+  },
   model: String,
-  image: String, // You can store the image URL or use another method to store images
   availability: Boolean,
   
   cameraType: {
     type: String,
-    enum: ['DSLR', 'Mirrorless', 'Compact', 'Bridge', 'Action', 'Medium Format', 'Other'],
+    enum: CAMERATYPE,
   },
   lensType: {
     type: String,
-    enum: ['Prime', 'Zoom', 'Wide Angle', 'Telephoto', 'Macro', 'Fisheye', 'Other'],
+    enum: LENSTYPE,
   },
   accessoryType: {
     type: String,
-    enum: ['Battery', 'Flash', 'Memory Card', 'Camera Bag', 'Camera Case', 'Tripod', 'Other'],
+    enum: ACCESSORYTYPE,
   },
 });
 

@@ -5,7 +5,10 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  description: String,
+  description: {
+    type: String,
+    required: true,
+  },
   price: {
     type: Number,
     required: true,
@@ -20,17 +23,11 @@ const productSchema = new mongoose.Schema({
     enum: ['New', 'Used'],
     default: 'New',
   },
-  conditionDescription: String,
   brand: String,
   model: String,
   image: String, // You can store the image URL or use another method to store images
   availability: Boolean,
-  location: String,
-  seller: {
-    name: String,
-    contact: String,
-    // You can add more details about the seller as needed
-  },
+  
   cameraType: {
     type: String,
     enum: ['DSLR', 'Mirrorless', 'Compact', 'Bridge', 'Action', 'Medium Format', 'Other'],

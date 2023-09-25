@@ -11,7 +11,7 @@ const UserSchema = new mongoose.Schema (
             "require" : true,
         },
        
-        "image": {
+        "avatar": {
             type: String,
         }
     }

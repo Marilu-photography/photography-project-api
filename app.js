@@ -24,7 +24,7 @@ app.use(express.json());
 // RUTAS
 
 const routes = require('./config/routes.config');
-app.use('api', routes);
+app.use('/api', routes);
 
 // ERRORES
 

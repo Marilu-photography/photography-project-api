@@ -3,13 +3,13 @@ const bcrypt = require("bcrypt");
 
 const SALT_WORK_FACTOR = 10;
 const EMAIL_PATTERN =
-  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 const userSchema = new mongoose.Schema(
   {
     username: {
       type: String,
-      require: [true, "Username is required."],
+      required: [true, "Username is required."],
     },
     name: {
       type: String,
@@ -18,9 +18,13 @@ const userSchema = new mongoose.Schema(
       minlength: [3, "Name needs at least 3 chars"],
       maxlength: [50, "Name needs max 50 chars"],
     },
+    surname: {
+            type: String,
+            required : [true, "Surname is required"]
+    },
     email: {
       type: String,
-      require: true,
+      requir: true,
       unique: true,
       lowercase: true,
       match: [EMAIL_PATTERN, "Please use a valid email address."],
@@ -33,7 +37,7 @@ const userSchema = new mongoose.Schema(
 
     avatar: {
             type: String,
-            default: 'https://t4.ftcdn.net/jpg/05/49/98/39/360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg'
+            default: 'https://cdn1.iconfinder.com/data/icons/web-seo-and-marketing/512/camera-1024.png'
         },
   },
   {

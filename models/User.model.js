@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema(
       required: [true, "Surname is required"],
       trim: true,
       minlength: [3, "Surname needs at least 3 chars"],
-      
+      maxlength: [50, "Surname needs max 50 chars"],
     },
     email: {
       type: String,
@@ -41,6 +41,7 @@ const userSchema = new mongoose.Schema(
     avatar: {
       type: String,
       default: 'https://cdn1.iconfinder.com/data/icons/web-seo-and-marketing/512/camera-1024.png'
+
     },
   },
   {
@@ -65,6 +66,7 @@ userSchema.pre("save", function (next) {
     bcrypt
       .genSalt(SALT_WORK_FACTOR)
       .then((salt) => {
+
         return bcrypt.hash(user.password, salt)
           .then((hash) => {
             user.password = hash;

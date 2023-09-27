@@ -1,7 +1,7 @@
 [
     {
       "name": "Cámara Nikon D850",
-      "image": "nikon_d850.jpg",
+      "image": "https://tienda.nikonistas.com/es/img2/2021/02/webfrontal-solo-cuerpo-02_nikon_dslr_d850_zs_950x807_950x807.jpg",
       "description": "Cámara DSLR de alta resolución de Nikon",
       "price": 1999.99,
       "category": "Camera",
@@ -15,7 +15,7 @@
     },
     {
       "name": "Lente Canon EF 50mm f/1.8",
-      "image": "canon_50mm_lens.jpg",
+      "image": "https://m.media-amazon.com/images/I/71v8GnJGV-L.jpg",
       "description": "Lente prime de Canon para retratos",
       "price": 199.99,
       "category": "Lens",
@@ -29,7 +29,7 @@
     },
     {
       "name": "Batería de repuesto",
-      "image": "battery.jpg",
+      "image": "https://m.media-amazon.com/images/I/71dw--B2z0L._AC_SL1500_.jpg",
       "description": "Batería recargable compatible con varias cámaras",
       "price": 29.99,
       "category": "Accessory",
@@ -43,7 +43,7 @@
     },
     {
       "name": "Cámara Sony Alpha A7 III",
-      "image": "sony_a7iii.jpg",
+      "image": "https://media.the-digital-picture.com/Images/Other/Sony-a7-III/Sony-a7-III-Angle.jpg",
       "description": "Cámara mirrorless de alta gama de Sony",
       "price": 2299.99,
       "category": "Camera",
@@ -57,7 +57,7 @@
     },
     {
       "name": "Lente Fujifilm XF 35mm f/1.4",
-      "image": "fuji_35mm_lens.jpg",
+      "image": "https://m.media-amazon.com/images/I/81-3DZrWKhL.jpg",
       "description": "Lente prime de Fujifilm para cámaras X-Series",
       "price": 499.99,
       "category": "Lens",
@@ -71,7 +71,7 @@
     },
     {
       "name": "Bolso para cámara",
-      "image": "camera_bag.jpg",
+      "image": "https://m.media-amazon.com/images/I/61XrwQRRDVL._AC_UX679_.jpg",
       "description": "Bolso acolchado para transportar cámaras y accesorios",
       "price": 49.99,
       "category": "Accessory",
@@ -85,7 +85,7 @@
     },
     {
       "name": "Cámara Olympus OM-D E-M10 Mark IV",
-      "image": "olympus_em10.jpg",
+      "image": "https://fotoruanopro.com/23387-large_default/olympus-e-m10-iv.jpg",
       "description": "Cámara mirrorless compacta de Olympus",
       "price": 799.99,
       "category": "Camera",
@@ -99,7 +99,7 @@
     },
     {
       "name": "Lente Panasonic Lumix G Vario 14-140mm",
-      "image": "panasonic_lens.jpg",
+      "image": "https://m.media-amazon.com/images/I/81wmEhxRuVL.jpg",
       "description": "Lente zoom versátil para cámaras Lumix",
       "price": 599.99,
       "category": "Lens",
@@ -113,7 +113,7 @@
     },
     {
       "name": "Trípode profesional",
-      "image": "tripod.jpg",
+      "image": "https://m.media-amazon.com/images/I/71+wdVDWqTL._AC_SL1500_.jpg",
       "description": "Trípode resistente para fotografía y videografía",
       "price": 129.99,
       "category": "Accessory",
@@ -127,7 +127,7 @@
     },
     {
       "name": "Cámara Kodak PixPro AZ652",
-      "image": "kodak_az652.jpg",
+      "image": "https://m.media-amazon.com/images/I/81AGaoBvIlL._AC_UF1000,1000_QL80_.jpg",
       "description": "Cámara bridge con zoom potente de Kodak",
       "price": 299.99,
       "category": "Camera",
@@ -141,7 +141,7 @@
     },
     {
       "name": "Lente Canon EF-S 18-55mm f/3.5-5.6 IS II",
-      "image": "canon_18-55mm_lens.jpg",
+      "image": "https://i1.adis.ws/i/canon/7_canon_ef-s-18-55mm-f3_5-5_6-is-ii_02f7e30131a440dfbb146bd77cc2969c?$block-hero-header-1by1-dt-jpg$",
       "description": "Lente zoom estándar de Canon para cámaras DSLR",
       "price": 149.99,
       "category": "Lens",
@@ -155,7 +155,7 @@
     },
     {
       "name": "Flash Godox TT685C para Canon",
-      "image": "godox_flash.jpg",
+      "image": "https://www.percyphoto.com/2842-large_default/godox-v860-iii-nikon-flash.jpg",
       "description": "Flash TTL para cámaras Canon",
       "price": 129.99,
       "category": "Accessory",
@@ -169,7 +169,7 @@
     },
     {
       "name": "Cámara Sony Cyber-shot DSC-RX100 VII",
-      "image": "sony_rx100.jpg",
+      "image": "https://assets.mmsrg.com/isr/166325/c1/-/pixelboxx-mss-79315557?x=1800&y=1800&format=jpg&quality=80&sp=yes&strip=yes&ex=1800&ey=1800&align=center&resizesource&unsharp=1.5x1+0.7+0.02",
       "description": "Cámara compacta avanzada de Sony",
       "price": 1199.99,
       "category": "Camera",
@@ -183,7 +183,7 @@
     },
     {
       "name": "Lente Nikon AF-S 24-70mm f/2.8G ED",
-      "image": "nikon_24-70mm_lens.jpg",
+      "image": "https://m.media-amazon.com/images/I/71MSr8qZxSL.jpg",
       "description": "Lente zoom estándar de alta calidad de Nikon",
       "price": 1999.99,
       "category": "Lens",
@@ -197,7 +197,7 @@
     },
     {
       "name": "Memory Card SanDisk Extreme Pro 128GB",
-      "image": "sandisk_memory_card.jpg",
+      "image": "https://expertphotography.b-cdn.net/wp-content/uploads/2018/05/memory-card-microsd.jpg",
       "description": "Tarjeta de memoria rápida para cámaras",
       "price": 59.99,
       "category": "Accessory",
@@ -211,7 +211,7 @@
     },
     {
       "name": "Cámara Canon EOS 5D Mark IV",
-      "image": "canon_5d_mark_iv.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Canon_EOS-5D-Mark-IV-03.jpg/1200px-Canon_EOS-5D-Mark-IV-03.jpg",
       "description": "Cámara DSLR de alta gama de Canon",
       "price": 2499.99,
       "category": "Camera",
@@ -225,7 +225,7 @@
     },
     {
       "name": "Lente Sigma 35mm f/1.4 DG HSM Art",
-      "image": "sigma_35mm_lens.jpg",
+      "image": "https://www.percyphoto.com/2771-large_default/sigma-35mm-f14-dg-dn-art-sony-montura-e.jpg",
       "description": "Lente prime de alta calidad de Sigma",
       "price": 799.99,
       "category": "Lens",
@@ -239,7 +239,7 @@
     },
     {
       "name": "Bolso para cámara",
-      "image": "camera_bag.jpg",
+      "image": "https://m.media-amazon.com/images/I/81DtAN13caL._AC_UF1000,1000_QL80_.jpg",
       "description": "Bolso acolchado para transportar cámaras y accesorios",
       "price": 49.99,
       "category": "Accessory",
@@ -253,7 +253,7 @@
     },
     {
       "name": "Cámara Panasonic Lumix GH5",
-      "image": "panasonic_gh5.jpg",
+      "image": "https://fotoruanopro.com/11991-large_default/lumix-gh5-12-60mm.jpg",
       "description": "Cámara mirrorless de alta calidad de Panasonic",
       "price": 1699.99,
       "category": "Camera",
@@ -267,7 +267,7 @@
     },
     {
       "name": "Lente Tamron SP 70-200mm f/2.8 Di VC USD G2",
-      "image": "tamron_70-200mm_lens.jpg",
+      "image": "https://www.orly.es/10613-large_default/tamron-sp-af-70-200mm-f28-di-ld-if-macro-objetivo-para-nikon-a001nii.jpg",
       "description": "Lente zoom telefoto de Tamron",
       "price": 1199.99,
       "category": "Lens",
@@ -281,7 +281,7 @@
     },
     {
       "name": "Tripod Manfrotto 190XPROB",
-      "image": "manfrotto_tripod.jpg",
+      "image": "https://cdn.manfrotto.com/media/catalog/product/cache/1e774dca205198565016e92bdb88ad55/m/k/mk190xpro4-bhq2.jpg",
       "description": "Trípode profesional de Manfrotto",
       "price": 199.99,
       "category": "Accessory",
@@ -295,7 +295,7 @@
     },
     {
       "name": "Cámara Canon PowerShot G7 X Mark III",
-      "image": "canon_g7x_mark_iii.jpg",
+      "image": "https://i1.adis.ws/i/canon/3637C011_Powershot%20G7x%20mark%20iii%20IMG%204?w=1680&bg=gray95&fmt=jpg",
       "description": "Cámara compacta avanzada de Canon",
       "price": 699.99,
       "category": "Camera",
@@ -309,7 +309,7 @@
     },
     {
       "name": "Lente Sony FE 24-70mm f/2.8 GM",
-      "image": "sony_24-70mm_lens.jpg",
+      "image": "https://fotoruanopro.com/33126-large_default/sony-24-70-mm-gm-ii-f28-fe-sel2470gm2.jpg",
       "description": "Lente zoom estándar de alta calidad de Sony",
       "price": 2199.99,
       "category": "Lens",
@@ -323,7 +323,7 @@
     },
     {
       "name": "Batería de repuesto",
-      "image": "battery.jpg",
+      "image": "https://m.media-amazon.com/images/I/71tbt06vz2L._AC_SL1500_.jpg",
       "description": "Batería recargable compatible con varias cámaras",
       "price": 29.99,
       "category": "Accessory",
@@ -337,7 +337,7 @@
     },
     {
       "name": "Cámara Fujifilm X-T4",
-      "image": "fuji_xt4.jpg",
+      "image": "https://fotografiarte.es/pro/7400-large_default/camara-fuji-xt4-comprar-fuji-xt4.jpg",
       "description": "Cámara mirrorless de alta calidad de Fujifilm",
       "price": 1499.99,
       "category": "Camera",
@@ -351,7 +351,7 @@
     },
     {
       "name": "Lente Nikon AF-S 50mm f/1.8G",
-      "image": "nikon_50mm_lens.jpg",
+      "image": "https://m.media-amazon.com/images/I/618OHWrYVsL.jpg",
       "description": "Lente prime de Nikon para retratos",
       "price": 249.99,
       "category": "Lens",
@@ -365,7 +365,7 @@
     },
     {
       "name": "Flash Godox V860II-N para Nikon",
-      "image": "godox_flash.jpg",
+      "image": "https://visanta.com/62240-product_540/kit-flash-flash-godox-v860iii-para-nikon.jpg",
       "description": "Flash TTL para cámaras Nikon",
       "price": 129.99,
       "category": "Accessory",
@@ -379,7 +379,7 @@
     },
     {
       "name": "Cámara Olympus PEN E-PL10",
-      "image": "olympus_epl10.jpg",
+      "image": "https://m.media-amazon.com/images/I/71XY-Iz7QEL.jpg",
       "description": "Cámara mirrorless compacta de Olympus",
       "price": 699.99,
       "category": "Camera",
@@ -393,7 +393,7 @@
     },
     {
       "name": "Lente Canon EF 85mm f/1.8 USM",
-      "image": "canon_85mm_lens.jpg",
+      "image": "https://i1.adis.ws/i/canon/ef_85mm_f1.4l_is_usm-side-with-cap_1406aaa1939148709263db23c5a87c6c?$prod-gallery-1by1-jpg$",
       "description": "Lente prime de Canon para retratos",
       "price": 349.99,
       "category": "Lens",
@@ -407,7 +407,7 @@
     },
     {
       "name": "Batería de repuesto",
-      "image": "battery.jpg",
+      "image": "https://thumb.pccomponentes.com/w-530-530/articles/1039/10395443/1189-canon-lp-e6nh-bateria-para-camaras-canon.jpg",
       "description": "Batería recargable compatible con varias cámaras",
       "price": 29.99,
       "category": "Accessory",
@@ -421,7 +421,7 @@
     },
     {
       "name": "Cámara Sony Alpha 7C",
-      "image": "sony_alpha_7c.jpg",
+      "image": "https://fotok.es/91931-thickbox_default/sony-a7-c-ilce-7c-50mm-f18.jpg",
       "description": "Cámara mirrorless compacta de Sony",
       "price": 1799.99,
       "category": "Camera",
@@ -435,7 +435,7 @@
     },
     {
       "name": "Lente Fujifilm XF 16-55mm f/2.8 R LM WR",
-      "image": "fuji_16-55mm_lens.jpg",
+      "image": "https://fotografiarte.es/pro/8175-large_default/fuji-16-55mm-f28.jpg",
       "description": "Lente zoom de alta calidad de Fujifilm",
       "price": 999.99,
       "category": "Lens",
@@ -449,7 +449,7 @@
     },
     {
       "name": "Bolso para cámara",
-      "image": "camera_bag.jpg",
+      "image": "https://m.media-amazon.com/images/I/91oA2eQpiUL._AC_SL1500_.jpg",
       "description": "Bolso acolchado para transportar cámaras y accesorios",
       "price": 49.99,
       "category": "Accessory",
@@ -463,7 +463,7 @@
     },
     {
       "name": "Cámara Olympus Tough TG-6",
-      "image": "olympus_tg6.jpg",
+      "image": "https://m.media-amazon.com/images/I/71X49b21IIS.jpg",
       "description": "Cámara compacta resistente de Olympus",
       "price": 399.99,
       "category": "Camera",
@@ -477,7 +477,7 @@
     },
     {
       "name": "Lente Panasonic Leica DG Vario-Elmarit 12-60mm f/2.8-4",
-      "image": "panasonic_leica_lens.jpg",
+      "image": "https://www.backmarket.es/cdn-cgi/image/format%3Dauto%2Cquality%3D75%2Cwidth%3D3840/https://d2e6ccujb3mkqf.cloudfront.net/2e6ca4de-1ef8-4f14-8bae-8301013309a2-1_e35eb4c1-eb96-427f-9fba-4259e4959081.jpg",
       "description": "Lente zoom de alta calidad de Panasonic",
       "price": 799.99,
       "category": "Lens",
@@ -491,7 +491,7 @@
     },
     {
       "name": "Trípode profesional",
-      "image": "tripod.jpg",
+      "image": "https://s.libertaddigital.com/2021/05/20/tripode-para-movil-kf-concept-tm2624l.jpg",
       "description": "Trípode resistente para fotografía y videografía",
       "price": 129.99,
       "category": "Accessory",
@@ -505,7 +505,7 @@
     },
     {
       "name": "Cámara Kodak PixPro AZ401",
-      "image": "kodak_az401.jpg",
+      "image": "https://m.media-amazon.com/images/I/71mcXgTbfjL._AC_UF1000,1000_QL80_.jpg",
       "description": "Cámara bridge con zoom de Kodak",
       "price": 149.99,
       "category": "Camera",
@@ -519,7 +519,7 @@
     },
     {
       "name": "Lente Canon EF-M 22mm f/2 STM",
-      "image": "canon_22mm_lens.jpg",
+      "image": "https://images.cashconverters.es/productslive/objetivo/canon-canon-ef-m-22mm-f2-stm_CC052_E647144-0_0.jpg",
       "description": "Lente prime compacto de Canon para cámaras mirrorless",
       "price": 249.99,
       "category": "Lens",
@@ -533,7 +533,7 @@
     },
     {
       "name": "Flash Godox TT685S para Sony",
-      "image": "godox_flash.jpg",
+      "image": "https://m.media-amazon.com/images/I/71FmcUcgg4L._AC_SL1500_.jpg",
       "description": "Flash TTL para cámaras Sony",
       "price": 129.99,
       "category": "Accessory",
@@ -547,7 +547,7 @@
     },
     {
       "name": "Cámara Sony Cyber-shot DSC-W800",
-      "image": "sony_w800.jpg",
+      "image": "https://m.media-amazon.com/images/I/71wAfMq6lvL._AC_UF1000,1000_QL80_.jpg",
       "description": "Cámara compacta económica de Sony",
       "price": 99.99,
       "category": "Camera",
@@ -561,7 +561,7 @@
     },
     {
       "name": "Lente Sigma 24-70mm f/2.8 DG OS HSM Art",
-      "image": "sigma_24-70mm_lens.jpg",
+      "image": "https://www.sigma-photo.es/17-thickbox_default/sigma-24-70mm-f28-dg-dn-art.jpg",
       "description": "Lente zoom de alta calidad de Sigma",
       "price": 1299.99,
       "category": "Lens",
@@ -575,7 +575,7 @@
     },
     {
       "name": "Bolso para cámara",
-      "image": "camera_bag.jpg",
+      "image": "https://i.blogs.es/df3a94/the-bond-street/1366_2000.jpg",
       "description": "Bolso acolchado para transportar cámaras y accesorios",
       "price": 49.99,
       "category": "Accessory",
@@ -589,7 +589,7 @@
     },
     {
       "name": "Cámara Canon EOS Rebel T7i",
-      "image": "canon_t7i.jpg",
+      "image": "https://www.tecnologiaenoferta.com/wp-content/uploads/2018/03/1-17-800x800.jpg",
       "description": "Cámara DSLR de nivel de entrada de Canon",
       "price": 699.99,
       "category": "Camera",
@@ -603,7 +603,7 @@
     },
     {
       "name": "Lente Tamron SP 24-70mm f/2.8 Di VC USD G2",
-      "image": "tamron_24-70mm_lens.jpg",
+      "image": "https://m.media-amazon.com/images/I/91gb4pz8Z6L.jpg",
       "description": "Lente zoom de alta calidad de Tamron",
       "price": 1099.99,
       "category": "Lens",
@@ -617,7 +617,7 @@
     },
     {
       "name": "Memory Card SanDisk Ultra 64GB",
-      "image": "sandisk_memory_card.jpg",
+      "image": "https://www.fotocasion.es/media/img/articulos/48846-tarjeta-micro-sd-64-gb-sandisk-FOTOCASION-OFERTA-DESCUENTO.jpg",
       "description": "Tarjeta de memoria estándar para cámaras",
       "price": 29.99,
       "category": "Accessory",
@@ -631,7 +631,7 @@
     },
     {
       "name": "Cámara Sony Alpha A6000",
-      "image": "sony_a6000.jpg",
+      "image": "https://dukefotografia.com/49858-thickbox_default/sony-alpha-a6000-16-50mm-funda-tarjeta-16gb-ilce-6000-sony.jpg",
       "description": "Cámara mirrorless compacta de Sony",
       "price": 499.99,
       "category": "Camera",
@@ -645,7 +645,7 @@
     },
     {
       "name": "Lente Fujifilm XF 18-55mm f/2.8-4 R LM OIS",
-      "image": "fuji_18-55mm_lens.jpg",
+      "image": "https://m.media-amazon.com/images/I/71eIBni4g+L.jpg",
       "description": "Lente zoom versátil de Fujifilm",
       "price": 699.99,
       "category": "Lens",
@@ -659,7 +659,7 @@
     },
     {
       "name": "Batería de repuesto",
-      "image": "battery.jpg",
+      "image": "https://www.kamera-express.nl/media/e9963dbc-de19-4518-850d-5d4bee0babca/12224596_1.jpg",
       "description": "Batería recargable compatible con varias cámaras",
       "price": 29.99,
       "category": "Accessory",
@@ -673,7 +673,7 @@
     },
     {
       "name": "Cámara Canon PowerShot SX620 HS",
-      "image": "canon_sx620.jpg",
+      "image": "https://dukefotografia.com/49984/canon-powershot-sx620-hs-roja-canon.jpg",
       "description": "Cámara compacta de Canon con zoom",
       "price": 249.99,
       "category": "Camera",
@@ -687,7 +687,7 @@
     },
     {
         "name": "Lente Nikon AF-P DX NIKKOR 10-20mm f/4.5-5.6G VR",
-        "image": "nikon_10-20mm_lens.jpg",
+        "image": "https://photographylife.com/wp-content/uploads/2017/05/Nikon-AF-P-DX-NIKKOR-10-20mm-f4.5-5.6G-VR.jpg",
         "description": "Lente gran angular de Nikon",
         "price": 299.99,
         "category": "Lens",
@@ -701,7 +701,7 @@
       },
       {
         "name": "Flash Godox V860II-C para Canon",
-        "image": "godox_flash.jpg",
+        "image": "https://cdn.profoto.com/cdn/052f9bd/globalassets/inriver/resources/901240_a_profoto-a10-profile-right.jpg?width=2840&quality=60&format=jpg",
         "description": "Flash TTL para cámaras Canon",
         "price": 129.99,
         "category": "Accessory",
@@ -715,7 +715,7 @@
       },
       {
         "name": "Cámara Sony Cyber-shot DSC-HX80",
-        "image": "sony_hx80.jpg",
+        "image": "https://img.pccomponentes.com/articles/33/335303/5996-sony-hx80-182mp-wifi-bluetooth-negra-caracteristicas.jpg",
         "description": "Cámara compacta con zoom de Sony",
         "price": 349.99,
         "category": "Camera",

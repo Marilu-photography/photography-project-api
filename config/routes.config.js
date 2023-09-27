@@ -1,12 +1,11 @@
 const router = require('express').Router();
 const authController = require('../controllers/auth.controller');
 const upload = require('../config/storage.config');
+const productsController = require('../controllers/products.controller');
 
 // MISC
 
-router.get('/', (req, res, next) => {
-    res.json({ message: 'Welcome to the API'});
-});
+router.get('/', productsController.list);
 
 // AUTH
 

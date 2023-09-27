@@ -19,8 +19,11 @@ const userSchema = new mongoose.Schema(
       maxlength: [50, "Name needs max 50 chars"],
     },
     surname: {
-            type: String,
-            required : [true, "Surname is required"]
+      type: String,
+      required: [true, "Surname is required"],
+      trim: true,
+      minlength: [3, "Surname needs at least 3 chars"],
+      
     },
     email: {
       type: String,
@@ -36,9 +39,9 @@ const userSchema = new mongoose.Schema(
     },
 
     avatar: {
-            type: String,
-            default: 'https://cdn1.iconfinder.com/data/icons/web-seo-and-marketing/512/camera-1024.png'
-        },
+      type: String,
+      default: 'https://cdn1.iconfinder.com/data/icons/web-seo-and-marketing/512/camera-1024.png'
+    },
   },
   {
     timestamps: true,
@@ -63,10 +66,10 @@ userSchema.pre("save", function (next) {
       .genSalt(SALT_WORK_FACTOR)
       .then((salt) => {
         return bcrypt.hash(user.password, salt)
-        .then((hash) => {
-          user.password = hash;
-          next();
-        });
+          .then((hash) => {
+            user.password = hash;
+            next();
+          });
       })
       .catch((error) => next(error));
   } else {

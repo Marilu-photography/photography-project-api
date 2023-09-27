@@ -40,8 +40,8 @@ const userSchema = new mongoose.Schema(
 
     avatar: {
       type: String,
-      default:
-        "https://cdn1.iconfinder.com/data/icons/web-seo-and-marketing/512/camera-1024.png",
+      default: 'https://cdn1.iconfinder.com/data/icons/web-seo-and-marketing/512/camera-1024.png'
+
     },
   },
   {
@@ -66,10 +66,12 @@ userSchema.pre("save", function (next) {
     bcrypt
       .genSalt(SALT_WORK_FACTOR)
       .then((salt) => {
-        return bcrypt.hash(user.password, salt).then((hash) => {
-          user.password = hash;
-          next();
-        });
+
+        return bcrypt.hash(user.password, salt)
+          .then((hash) => {
+            user.password = hash;
+            next();
+          });
       })
       .catch((error) => next(error));
   } else {

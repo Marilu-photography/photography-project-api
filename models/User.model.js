@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 const SALT_WORK_FACTOR = 10;
 const EMAIL_PATTERN =
@@ -58,6 +58,13 @@ const userSchema = new mongoose.Schema(
     },
   }
 );
+
+userSchema.virtual("images", {
+  ref: "Image",
+  localField: "_id",
+  foreignField: "author",
+  justOne: false,
+});
 
 userSchema.pre("save", function (next) {
   const user = this;

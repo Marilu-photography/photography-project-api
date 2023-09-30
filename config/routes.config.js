@@ -9,6 +9,10 @@ const productsController = require('../controllers/products.controller');
 
 router.get('/', productsController.list);
 
+// PRODUCTS
+
+router.get('/:id', productsController.prouctDetail);
+
 // AUTH
 
 router.post('/register', upload.single('avatar'), authController.register);

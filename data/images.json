@@ -1,28 +1,28 @@
 [
     {
       "name": "Image 1",
-      "image": "https://okdiario.com/img/2021/04/04/como-utilizan-los-gatos-la-lengua-para-acicalarse.jpg",
+      "imageUrl": "https://okdiario.com/img/2021/04/04/como-utilizan-los-gatos-la-lengua-para-acicalarse.jpg",
       "description": "Image 1 Description",
       "price": 9.99,
       "author": "6517040b785e63174901d5ca"
     },
     {
       "name": "Image 2",
-      "image": "https://madridando.com/wp-content/uploads/2018/07/gran-via-noche.jpeg",
+      "imageUrl": "https://madridando.com/wp-content/uploads/2018/07/gran-via-noche.jpeg",
       "description": "Image 2 Description",
       "price": 14.99,
       "author": "6517040b785e63174901d5ca"
     },
     {
       "name": "Image 3",
-      "image": "https://www.flormoments.com/blog/wp-content/uploads/schema-and-structured-data-for-wp/QUE-ES-UNA-FLOR-PRESERVADA-Y-COMO-SE-HACE-1200x900.jpg",
+      "imageUrl": "https://www.flormoments.com/blog/wp-content/uploads/schema-and-structured-data-for-wp/QUE-ES-UNA-FLOR-PRESERVADA-Y-COMO-SE-HACE-1200x900.jpg",
       "description": "Image 3 Description",
       "price": 19.99,
       "author": "6517040b785e63174901d5ca"
     },
     {
       "name": "Image 4",
-      "image": "https://www.archisevilla.org/wp-content/uploads/2016/04/amigos.jpg",
+      "imageUrl": "https://www.archisevilla.org/wp-content/uploads/2016/04/amigos.jpg",
       "description": "Image 4 Description",
       "price": 12.99,
       "author": "6517040b785e63174901d5ca"

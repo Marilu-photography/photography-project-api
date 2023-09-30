@@ -9,3 +9,9 @@ module.exports.list = (req, res, next) => {
       .then(products => res.status(StatusCodes.OK).json(products))
       .catch(next)
   }
+
+  module.exports.prouctDetail = (req, res, next) => {
+    Product.findById(req.params.id)
+      .then(product => res.status(StatusCodes.OK).json(product))
+      .catch(next)
+  }

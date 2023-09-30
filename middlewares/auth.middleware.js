@@ -3,6 +3,7 @@ const createError = require('http-errors');
 const { StatusCodes } = require('http-status-codes');
 
 module.exports.isAunthenticated = (req, res, next) => {
+    const authorization = req.headers.authorization;
 
     if (authorization) {
         const [type, token] = authorization.split(' ');

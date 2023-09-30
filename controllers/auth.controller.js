@@ -40,7 +40,7 @@ module.exports.login = (req, res, next) => {
             expiresIn: "1h",
           }
         );
-        res.json({ accesToken: token });
+        res.json({ accessToken: token });
       });
     })
     .catch(next);

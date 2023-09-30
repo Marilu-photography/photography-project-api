@@ -12,7 +12,7 @@ router.get('/', productsController.list);
 
 // PRODUCTS
 
-router.get('/:id', productsController.prouctDetail);
+router.get('/products/:id', productsController.prouctDetail);
 
 // AUTH
 

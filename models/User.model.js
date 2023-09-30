@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema(
   {
     username: {
       type: String,
+      minlength: [3, "Username needs at least 3 chars"],
       required: [true, "Username is required."],
     },
     name: {
@@ -23,7 +24,6 @@ const userSchema = new mongoose.Schema(
       required: [true, "Surname is required"],
       trim: true,
       minlength: [3, "Surname needs at least 3 chars"],
-      maxlength: [50, "Surname needs max 50 chars"],
     },
     email: {
       type: String,
@@ -42,7 +42,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: 'https://cdn1.iconfinder.com/data/icons/web-seo-and-marketing/512/camera-1024.png'
 
-    },
+    } //poner dirección calle
   },
   {
     timestamps: true,

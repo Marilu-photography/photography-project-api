@@ -25,7 +25,7 @@ router.get('/users/me', authMiddleware.isAunthenticated, usersController.getCurr
 
 // IMAGES
 
-router.post('/images/upload', upload.single('image'), imagesController.createImage); //poner middleware de autenticacion
+router.post('/images/upload', authMiddleware.isAunthenticated, upload.single('image'), imagesController.createImage); //poner middleware de autenticacion
 
 
 module.exports = router;

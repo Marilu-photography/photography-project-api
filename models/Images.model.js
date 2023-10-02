@@ -3,23 +3,23 @@ const mongoose = require('mongoose');
 const imageSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true,
+        required: [true, 'Name is required.'],
     },
     imageUrl: {
         type: String,
-        required: true,
+        required: [true, 'Image is required.']
     },
     description: {
         type: String,
     },
     price: {
         type: Number,
-        required: true,
+        required: [true, 'Price is required.'],
     },
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: true,
+        required: [true, 'Author is required.'],
     }
 });
 

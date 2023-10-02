@@ -8,11 +8,12 @@ const imagesController = require('../controllers/images.controller');
 
 // MISC
 
-router.get('/', productsController.list);
+
 
 // PRODUCTS
-
+router.get('/', productsController.list);
 router.get('/products/:id', productsController.prouctDetail);
+router.post('/products/checkout',authMiddleware.isAunthenticated, productsController.createCheckoutSession);
 
 // AUTH
 
@@ -25,7 +26,6 @@ router.get('/users/me', authMiddleware.isAunthenticated, usersController.getCurr
 
 // IMAGES
 
-router.post('/images/upload', authMiddleware.isAunthenticated, upload.single('image'), imagesController.createImage); //poner middleware de autenticacion
-
+router.post('/images/upload', authMiddleware.isAunthenticated, upload.single('image'), imagesController.createImage);
 
 module.exports = router;

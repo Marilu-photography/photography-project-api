@@ -42,7 +42,13 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: 'https://cdn1.iconfinder.com/data/icons/web-seo-and-marketing/512/camera-1024.png'
 
-    } //poner dirección calle
+    },
+    
+    isAdmin: {
+      type: Boolean,
+      default: false},
+      
+      //poner dirección calle
   },
   {
     timestamps: true,

@@ -5,24 +5,24 @@ const { BRAND, CATEGORY, CONDITION, CAMERATYPE, LENSTYPE, ACCESSORYTYPE } = ('..
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    required: [true, 'Name is required.'],
   },
   image: {
     type: String,
-    required: true,
+    required: [true, 'Image is required.'],
   },
   description: {
     type: String,
-    required: true,
+    required: [true, 'Description is required.']
   },
   price: {
     type: Number,
-    required: true,
+    required: [true, 'Price is required.'],
   },
   category: {
     type: String,
     enum: CATEGORY,
-    required: true,
+    required: [true, 'Category is required.']
   },
   condition: {
     type: String,

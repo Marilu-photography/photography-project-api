@@ -11,13 +11,18 @@ const IMAGES = require('../data/images.json');
 require('../config/db.config');
 
 mongoose.connection.once('open', () => {
+    let usersCreated;
+
     mongoose.connection.db
         .dropDatabase()
         .then(() => {
             console.log('Database dropped');
             return User.create(USERS);
         })
-        .then(usersCreated => {
+        .then(createdUsers  => {
+
+usersCreated = createdUsers;
+
             usersCreated.forEach(user => {
                 console.log(`${user.username} has been created`);
             });
@@ -40,8 +45,10 @@ mongoose.connection.once('open', () => {
             productCreated.forEach(product => {
                 console.log(`${product.name} has been created`);
             });
+
+
             const imagesAuthorIds = IMAGES.map(image => {
-                const userMatch = usersImageCreated.find(user => user.username === image.author);
+                const userMatch = usersCreated.find(user => user.username === image.author);
 
                 if (userMatch) {
                     return { ...image, author: userMatch._id };

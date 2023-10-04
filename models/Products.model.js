@@ -48,6 +48,11 @@ const productSchema = new mongoose.Schema({
     type: String,
     enum: ACCESSORYTYPE,
   },
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: [true, 'Owner is required.']
+  },
 });
 
 const Product = mongoose.model('Product', productSchema);

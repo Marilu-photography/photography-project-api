@@ -1,16 +1,19 @@
 const router = require('express').Router();
 const authController = require('../controllers/auth.controller');
 const authMiddleware = require('../middlewares/auth.middleware');
+const isAdminMiddleware = require('../middlewares/isAdmin.middleware');
 const usersController = require('../controllers/users.controller')
 const upload = require('../config/storage.config');
 const productsController = require('../controllers/products.controller');
 const imagesController = require('../controllers/images.controller');
+
 
 // MISC
 
 
 
 // PRODUCTS
+router.post('/create', authMiddleware.isAunthenticated, upload.single(`image`), productsController.create);
 router.get('/', productsController.list);
 router.get('/products/:id', productsController.prouctDetail);
 router.post('/products/checkout',authMiddleware.isAunthenticated, productsController.createCheckoutSession);

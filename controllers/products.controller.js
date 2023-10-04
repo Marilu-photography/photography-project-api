@@ -3,6 +3,24 @@ const Product = require('../models/Products.model');
 const { StatusCodes } = require('http-status-codes');
 
 
+
+
+module.exports.create = (req, res, next) => {
+  
+  
+  const data = {
+    ...req.body,
+    owner: req.currentUser,
+    image: req.file ? req.file.path : undefined,
+};
+  // aquí ira lo delos archivos
+
+  Product.create( data )
+    .then(product => res.status(201).json(product))
+    .catch(next);
+}
+
+
 module.exports.list = (req, res, next) => {
   console.log('holaaaaaa');
     Product.find()
@@ -20,7 +38,7 @@ module.exports.list = (req, res, next) => {
     const { _id, name, price, image } = req.body;
   
   const session = await stripe.checkout.sessions.create({
-    paymen_methof_types: ['card'],
+    payment_method_types: ['card'],
     line_items: [
       {
         price_data: {

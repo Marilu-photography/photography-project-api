@@ -1,4 +1,4 @@
-const createError = require('http-errors');
+const createHttpError = require('http-errors');
 const User = require('../models/User.model');
 const { StatusCodes } = require('http-status-codes');
 

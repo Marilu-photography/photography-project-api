@@ -6,6 +6,7 @@ const usersController = require('../controllers/users.controller')
 const upload = require('../config/storage.config');
 const productsController = require('../controllers/products.controller');
 const imagesController = require('../controllers/images.controller');
+const miscController = require('../controllers/misc.controller');
 
 
 // MISC
@@ -16,7 +17,7 @@ const imagesController = require('../controllers/images.controller');
 router.post('/create', authMiddleware.isAunthenticated, upload.single(`image`), productsController.create);
 router.get('/', productsController.list);
 router.get('/products/:id', productsController.prouctDetail);
-router.post('/products/checkout',authMiddleware.isAunthenticated, productsController.createCheckoutSession);
+router.post('/products/checkout',authMiddleware.isAuthenticated, productsController.createCheckoutSession);
 
 // AUTH
 
@@ -25,10 +26,15 @@ router.post('/login', authController.login);
 
 //USER
 
-router.get('/users/me', authMiddleware.isAunthenticated, usersController.getCurrentUser)
+router.get('/users/me', authMiddleware.isAuthenticated, usersController.getCurrentUser)
 
 // IMAGES
 
-router.post('/images/upload', authMiddleware.isAunthenticated, upload.single('image'), imagesController.createImage);
+router.post('/images/upload', authMiddleware.isAuthenticated, upload.single('image'), imagesController.createImage);
+
+// COMMENTS
+//router.get("/products/:productId", miscController.getCommentsForProduct);
+//router.post('/comments/:id', authMiddleware.isAuthenticated, miscController.createComment);
+//router.delete("/comments/:id/delete", authMiddleware.isAuthenticated, miscController.deleteComment);
 
 module.exports = router;

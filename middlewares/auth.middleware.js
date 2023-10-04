@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const createError = require('http-errors');
 const { StatusCodes } = require('http-status-codes');
 
-module.exports.isAunthenticated = (req, res, next) => {
+module.exports.isAuthenticated = (req, res, next) => {
     const authorization = req.headers.authorization;
 
     if (authorization) {

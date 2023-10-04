@@ -26,5 +26,19 @@
       "description": "Image 4 Description",
       "price": 12.99,
       "author": "6517040b785e63174901d5ca"
+    },
+    {
+      "name": "Image 5",
+      "imageUrl": "https://www.archisevilla.org/wp-content/uploads/2016/04/amigos.jpg",
+      "description": "Image 5 Description",
+      "price": 12.99,
+      "author": "6517040b785e63174901d5ca"
+    },
+    {
+      "name": "Image 6",
+      "imageUrl": "https://www.archisevilla.org/wp-content/uploads/2016/04/amigos.jpg",
+      "description": "Image 6 Description",
+      "price": 12.99,
+      "author": "6517040b785e63174901d5ca"
     }
   ]

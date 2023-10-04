@@ -40,10 +40,8 @@ mongoose.connection.once('open', () => {
             productCreated.forEach(product => {
                 console.log(`${product.name} has been created`);
             });
-
-            // Crea imágenes con varios usuarios
             const imagesAuthorIds = IMAGES.map(image => {
-                const userMatch = usersCreated.find(user => user.username === image.author);
+                const userMatch = usersImageCreated.find(user => user.username === image.author);
 
                 if (userMatch) {
                     return { ...image, author: userMatch._id };

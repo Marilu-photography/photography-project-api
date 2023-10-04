@@ -18,27 +18,51 @@ module.exports.list = (req, res, next) => {
   }
 
   module.exports.createCheckoutSession = async (req, res, next) => {
-    const { _id, price, name, description, image } = req.body;
+    const products = req.body;
+
+/*     {
+      "_id": "651d93bee272965521ef133c",
+      "name": "Cámara Nikon D850",
+      "image": "https://tienda.nikonistas.com/es/img2/2021/02/webfrontal-solo-cuerpo-02_nikon_dslr_d850_zs_950x807_950x807.jpg",
+      "description": "Cámara DSLR de alta resolución de Nikon",
+      "price": 1999.99,
+      "category": "Camera",
+      "condition": "New",
+      "brand": "Nikon",
+      "model": "D850",
+      "availability": true,
+      "cameraType": "DSLR",
+      "lensType": "Prime",
+      "accessoryType": "Battery",
+      "__v": 0,
+      "id": "651d93bee272965521ef133c",
+      "quantity": 1,
+      "itemTotal": 1999.99
+    } */
+
+    console.log(products);
+
+    const lineProducts = products.map(product => {
+      return {
+        price_data: {
+          currency: 'eur',
+          product_data: {
+            name: product.name,
+            description: product.description,
+            images: [product.image]
+          },
+          unit_amount: parseFloat((product.price * 100).toFixed(2)),
+        },
+        quantity: product.quantity,
+      }
+    });
   
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
-      line_items: [
-        {
-          price_data: {
-            currency: 'eur',
-            product_data: {
-              name: name,
-              description: description,
-              images: [image]
-            },
-            unit_amount: parseFloat((price * 100).toFixed(2)),
-          },
-          quantity: 1,
-        },
-      ],
+      line_items: lineProducts,
       mode: 'payment',
-      success_url: `${process.env.APP_HOST}/products/${_id}?success=true`,
-      cancel_url: `${process.env.APP_HOST}/products/${_id}?canceled=true`,
+      success_url: `${process.env.APP_WEB}/cart?success=true`,
+      cancel_url: `${process.env.APP_WEB}/cart?canceled=true`,
     });
   
     res.json({url: session.url});

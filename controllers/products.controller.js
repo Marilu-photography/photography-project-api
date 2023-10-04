@@ -4,6 +4,24 @@ const { StatusCodes } = require('http-status-codes');
 const stripe  = require('stripe')(process.env.STRIPE_SECRET_KEY);;
 
 
+
+
+module.exports.create = (req, res, next) => {
+  
+  
+  const data = {
+    ...req.body,
+    owner: req.currentUser,
+    image: req.file ? req.file.path : undefined,
+};
+  // aquí ira lo delos archivos
+
+  Product.create( data )
+    .then(product => res.status(201).json(product))
+    .catch(next);
+}
+
+
 module.exports.list = (req, res, next) => {
   console.log('holaaaaaa');
     Product.find()
@@ -16,7 +34,7 @@ module.exports.list = (req, res, next) => {
       .then(product => res.status(StatusCodes.OK).json(product))
       .catch(next)
   }
-
+  
   module.exports.createCheckoutSession = async (req, res, next) => {
     const products = req.body;
 
@@ -40,7 +58,7 @@ module.exports.list = (req, res, next) => {
       "itemTotal": 1999.99
     } */
 
-    console.log(products);
+     console.log(products);
 
     const lineProducts = products.map(product => {
       return {

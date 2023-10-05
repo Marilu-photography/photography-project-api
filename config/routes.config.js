@@ -6,7 +6,7 @@ const usersController = require('../controllers/users.controller')
 const upload = require('../config/storage.config');
 const productsController = require('../controllers/products.controller');
 const imagesController = require('../controllers/images.controller');
-const miscController = require('../controllers/misc.controller');
+//const miscController = require('../controllers/misc.controller');
 
 
 // MISC
@@ -29,7 +29,7 @@ router.post('/login', authController.login);
 router.get('/users/me', authMiddleware.isAuthenticated, usersController.getCurrentUser)
 
 // IMAGES
-
+router.get('/images', imagesController.imagesList);
 router.post('/images/upload', authMiddleware.isAuthenticated, upload.single('image'), imagesController.createImage);
 
 // COMMENTS

@@ -12,7 +12,6 @@ const imagesController = require('../controllers/images.controller');
 // MISC
 
 
-
 // PRODUCTS
 router.post('/create', authMiddleware.isAuthenticated, upload.single(`image`), productsController.create);
 router.get('/', productsController.list);
@@ -27,6 +26,7 @@ router.post('/login', authController.login);
 //USER
 
 router.get('/users/me', authMiddleware.isAuthenticated, usersController.getCurrentUser)
+router.get('/users/:id', usersController.userProfile)
 
 // IMAGES
 router.get('/images', imagesController.imagesList);

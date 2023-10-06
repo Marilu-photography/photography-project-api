@@ -23,7 +23,6 @@ module.exports.create = (req, res, next) => {
 
 
 module.exports.list = (req, res, next) => {
-  console.log('holaaaaaa');
     Product.find()
       .then(products => res.status(StatusCodes.OK).json(products))
       .catch(next)

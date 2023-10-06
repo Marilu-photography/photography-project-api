@@ -2,6 +2,7 @@ const createError = require("http-errors");
 const Image = require("../models/Images.model");
 const { StatusCodes } = require("http-status-codes");
 
+
 module.exports.createImage = (req, res, next) => {
   if (req.file) {
     req.body.image = req.file.path;
@@ -13,13 +14,10 @@ module.exports.createImage = (req, res, next) => {
 };
 
 module.exports.imagesList = (req, res, next) => {
-  Image.find()
+    Image.find()
+    .populate('author')
     .then((images) => {
-        console.log('HOLAAAA')
-        
-        res.status(StatusCodes.OK).json(images)
-        console.log(json(images))
+      res.status(StatusCodes.OK).json(images);
     })
-    
     .catch(next);
-};
+}  

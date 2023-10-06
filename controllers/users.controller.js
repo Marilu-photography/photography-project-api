@@ -13,3 +13,12 @@ User.findById(req.currentUser)
 })
 .catch(next)
 }
+
+module.exports.userProfile = (req, res, next) => {
+User.findById(req.params.id)
+.populate('images')
+    .then(user => res.status(StatusCodes.OK).json(user))
+    .catch(next)
+}
+
+

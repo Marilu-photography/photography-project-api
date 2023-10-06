@@ -14,6 +14,12 @@ module.exports.createImage = (req, res, next) => {
 
 module.exports.imagesList = (req, res, next) => {
   Image.find()
-    .then((images) => res.status(StatusCodes.OK).res.json(images))
+    .then((images) => {
+        console.log('HOLAAAA')
+        
+        res.status(StatusCodes.OK).json(images)
+        console.log(json(images))
+    })
+    
     .catch(next);
 };

@@ -10,7 +10,7 @@ const imagesController = require('../controllers/images.controller');
 
 
 // MISC
-
+router.get('/editor/:id',authMiddleware.isAuthenticated, imagesController.editorTool);
 
 // PRODUCTS
 router.post('/create', authMiddleware.isAuthenticated, upload.single(`image`), productsController.create);

@@ -4,11 +4,11 @@ const { StatusCodes } = require("http-status-codes");
 
 
 module.exports.createImage = (req, res, next) => {
-  if (req.file) {
-    req.body.image = req.file.path;
-  }
+    const data = { 
+        ...req.body,
+        imageUrl: req.file ? req.file.path : undefined, };
 
-  Image.create(req.body)
+  Image.create(data)
     .then((image) => res.status(StatusCodes.CREATED).json(image))
     .catch(next);
 };
@@ -21,3 +21,9 @@ module.exports.imagesList = (req, res, next) => {
     })
     .catch(next);
 }  
+
+module.exports.editorTool = (req, res, next) => {
+    Image.findById(req.params.id)
+    .then(image => res.status(StatusCodes.OK).json(image))
+    .catch(next)
+}

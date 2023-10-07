@@ -6,12 +6,11 @@ const usersController = require('../controllers/users.controller')
 const upload = require('../config/storage.config');
 const productsController = require('../controllers/products.controller');
 const imagesController = require('../controllers/images.controller');
-const miscController = require('../controllers/misc.controller');
+//const miscController = require('../controllers/misc.controller');
 
 
 // MISC
-
-
+router.get('/editor/:id',authMiddleware.isAuthenticated, imagesController.editorTool);
 
 // PRODUCTS
 router.post('/create', authMiddleware.isAuthenticated, upload.single(`image`), productsController.create);
@@ -31,9 +30,10 @@ router.post('/login', authController.login);
 //USER
 
 router.get('/users/me', authMiddleware.isAuthenticated, usersController.getCurrentUser)
+router.get('/users/:id', usersController.userProfile)
 
 // IMAGES
-
+router.get('/images', imagesController.imagesList);
 router.post('/images/upload', authMiddleware.isAuthenticated, upload.single('image'), imagesController.createImage);
 
 // COMMENTS

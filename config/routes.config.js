@@ -10,7 +10,7 @@ const imagesController = require('../controllers/images.controller');
 
 
 // MISC
-router.get('/editor/:id',authMiddleware.isAuthenticated, imagesController.editorTool);
+router.get('/editor/:id',authMiddleware.isAuthenticated, upload.single('imageUrl'), imagesController.editorTool);
 
 // PRODUCTS
 router.post('/create', authMiddleware.isAuthenticated, upload.single(`image`), productsController.create);
@@ -30,11 +30,13 @@ router.post('/login', authController.login);
 //USER
 
 router.get('/users/me', authMiddleware.isAuthenticated, usersController.getCurrentUser)
-router.get('/users/:id', usersController.userProfile)
+router.get('/profile/:id', usersController.userProfile)
 
 // IMAGES
 router.get('/images', imagesController.imagesList);
-router.post('/images/upload', authMiddleware.isAuthenticated, upload.single('image'), imagesController.createImage);
+router.post('/images/upload', authMiddleware.isAuthenticated, upload.single('imageUrl'), imagesController.createImage);
+router.delete('/images/:id/', authMiddleware.isAuthenticated, imagesController.deleteImage);
+
 
 // COMMENTS
 //router.get("/products/:productId", miscController.getCommentsForProduct);

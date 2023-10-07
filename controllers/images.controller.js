@@ -22,6 +22,12 @@ module.exports.imagesList = (req, res, next) => {
     .catch(next);
 }  
 
+module.exports.deleteImage = (req, res, next) => {
+    Image.findByIdAndDelete(req.params.id)
+    .then(() => res.status(StatusCodes.NO_CONTENT).send())
+    .catch(next);
+}
+
 module.exports.editorTool = (req, res, next) => {
     Image.findById(req.params.id)
     .then(image => res.status(StatusCodes.OK).json(image))

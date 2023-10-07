@@ -16,8 +16,12 @@ const miscController = require('../controllers/misc.controller');
 // PRODUCTS
 router.post('/create', authMiddleware.isAuthenticated, upload.single(`image`), productsController.create);
 router.get('/', productsController.list);
-router.get('/products/:id', productsController.prouctDetail);
+router.patch('/products/:id', authMiddleware.isAuthenticated,upload.single(`image`), productsController.edit);
+router.get('/products/:id', productsController.productDetail);
+router.delete('/products/:id/', authMiddleware.isAuthenticated, productsController.deleteProduct);
+
 router.post('/products/checkout',authMiddleware.isAuthenticated, productsController.createCheckoutSession);
+
 
 // AUTH
 

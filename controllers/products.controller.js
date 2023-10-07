@@ -23,18 +23,40 @@ module.exports.create = (req, res, next) => {
 
 
 module.exports.list = (req, res, next) => {
-  console.log('holaaaaaa');
     Product.find()
+      .sort({ createdAt: -1 })
       .then(products => res.status(StatusCodes.OK).json(products))
       .catch(next)
   }
 
-  module.exports.prouctDetail = (req, res, next) => {
+  module.exports.productDetail = (req, res, next) => {
     Product.findById(req.params.id)
       .then(product => res.status(StatusCodes.OK).json(product))
       .catch(next)
   }
+
   
+  module.exports.edit = (req, res, next) => {
+    
+     const data = {
+      ...req.body,
+      owner: req.currentUser,
+      image: req.file ? req.file.path : undefined,
+    };
+  
+  
+    Product.findByIdAndUpdate(req.params.id, data, { new: true })
+      .then(product => res.status(StatusCodes.OK).json(product))
+      .catch(next);
+  }
+
+  module.exports.deleteProduct = (req, res, next) => {
+    Product.findByIdAndDelete(req.params.id)
+      .then(() => res.status(StatusCodes.NO_CONTENT).send())
+      .catch(next)
+  }
+
+
   module.exports.createCheckoutSession = async (req, res, next) => {
     const products = req.body;
 

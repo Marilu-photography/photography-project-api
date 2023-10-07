@@ -53,6 +53,9 @@ const productSchema = new mongoose.Schema({
     ref: 'User',
     required: [true, 'Owner is required.']
   },
+}, 
+{ timestamps: true
+  
 });
 
 const Product = mongoose.model('Product', productSchema);

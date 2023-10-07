@@ -16,7 +16,14 @@ User.findById(req.currentUser)
 
 module.exports.userProfile = (req, res, next) => {
 User.findById(req.params.id)
-.populate('images')
+.populate({
+    path: 'images',
+    populate: {
+        path: 'author',
+        module: 'User'
+    }
+})
+
     .then(user => res.status(StatusCodes.OK).json(user))
     .catch(next)
 }

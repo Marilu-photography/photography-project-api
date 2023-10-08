@@ -36,6 +36,7 @@ router.get('/profile/:id', usersController.userProfile)
 router.get('/images', imagesController.imagesList);
 router.post('/images/upload', authMiddleware.isAuthenticated, upload.single('imageUrl'), imagesController.createImage);
 router.delete('/images/:id/', authMiddleware.isAuthenticated, imagesController.deleteImage);
+//router.post('/images/:id/edited', authMiddleware.isAuthenticated,  upload.single('imageUrl'), imagesController.editImage);
 
 
 // COMMENTS

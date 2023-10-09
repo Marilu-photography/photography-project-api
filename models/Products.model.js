@@ -58,6 +58,13 @@ const productSchema = new mongoose.Schema({
   
 });
 
+productSchema.virtual('comments', {
+  ref: 'Comment',
+  localField: '_id',
+  foreignField: 'product',
+  justOne: false,
+});
+
 const Product = mongoose.model('Product', productSchema);
 
 module.exports = Product;

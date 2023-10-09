@@ -6,7 +6,6 @@ const usersController = require('../controllers/users.controller')
 const upload = require('../config/storage.config');
 const productsController = require('../controllers/products.controller');
 const imagesController = require('../controllers/images.controller');
-//const miscController = require('../controllers/misc.controller');
 
 
 // MISC
@@ -36,11 +35,10 @@ router.get('/profile/:id', usersController.userProfile)
 router.get('/images', imagesController.imagesList);
 router.post('/images/upload', authMiddleware.isAuthenticated, upload.single('imageUrl'), imagesController.createImage);
 router.delete('/images/:id/', authMiddleware.isAuthenticated, imagesController.deleteImage);
+router.post('/images/:id/edited-image', authMiddleware.isAuthenticated,  upload.single('imageUrl'), imagesController.editImage);
 
 
 // COMMENTS
-//router.get("/products/:productId", miscController.getCommentsForProduct);
-//router.post('/comments/:id', authMiddleware.isAuthenticated, miscController.createComment);
-//router.delete("/comments/:id/delete", authMiddleware.isAuthenticated, miscController.deleteComment);
+router.post('/comments/:id', authMiddleware.isAuthenticated, productsController.doComments);
 
 module.exports = router;

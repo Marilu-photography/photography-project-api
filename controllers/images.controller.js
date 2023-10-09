@@ -57,3 +57,9 @@ module.exports.editorTool = (req, res, next) => {
         res.stattus(500).json({ message: 'Something went wrong' });
     });
     }*/
+    module.exports.editImage = (req, res, next) => {
+        const { editedImageUrl } = req.body;
+    Image.findByIdAndUpdate(req.params.id, {editedImageUrl}, { new: true })
+      .then(image => res.status(StatusCodes.OK).json(image))
+      .catch(next);
+  }

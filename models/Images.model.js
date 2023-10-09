@@ -19,8 +19,11 @@ const imageSchema = new mongoose.Schema({
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-    }
-},
+    },
+    editedImageUrl: {
+        type: String,
+    },
+    },
 { timestamps: true
   
 });

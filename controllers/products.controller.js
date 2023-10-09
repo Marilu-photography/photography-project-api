@@ -107,3 +107,16 @@ module.exports.list = (req, res, next) => {
   
     res.json({url: session.url});
   }
+
+  // controller de comentarios
+
+module.exports.doComments = (req, res, next) => {
+   const data = {
+     ...req.body,
+      user: req.currentUser,
+      product: req.params.id,
+    };
+    Comment.create(data)
+    .then(comment => res.status(201).json(comment))
+    .catch(next);
+}

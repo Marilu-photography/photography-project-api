@@ -1,11 +1,14 @@
 const router = require('express').Router();
-const authController = require('../controllers/auth.controller');
+
 const authMiddleware = require('../middlewares/auth.middleware');
 const isAdminMiddleware = require('../middlewares/isAdmin.middleware');
+
 const usersController = require('../controllers/users.controller')
-const upload = require('../config/storage.config');
+const authController = require('../controllers/auth.controller');
 const productsController = require('../controllers/products.controller');
 const imagesController = require('../controllers/images.controller');
+const upload = require('../config/storage.config');
+const miscController = require('../controllers/misc.controller');
 
 
 // MISC
@@ -17,7 +20,6 @@ router.get('/', productsController.list);
 router.patch('/products/:id', authMiddleware.isAuthenticated,upload.single(`image`), productsController.edit);
 router.get('/products/:id', productsController.productDetail);
 router.delete('/products/:id/', authMiddleware.isAuthenticated, productsController.deleteProduct);
-
 router.post('/products/checkout',authMiddleware.isAuthenticated, productsController.createCheckoutSession);
 
 
@@ -39,7 +41,8 @@ router.post('/images/:id/edited-image', authMiddleware.isAuthenticated,  upload.
 
 
 // COMMENTS
-router.get('/products/:id/comments', productsController.getComments);
-router.post('/products/:id/comments', authMiddleware.isAuthenticated, productsController.doComments);
+router.get('/comments/list/:id', miscController.listComments);
+router.post('/comments/create/:id', authMiddleware.isAuthenticated, miscController.createComment);
+router.delete('/comments/delete/:id', authMiddleware.isAuthenticated, miscController.deleteComment);
 
 module.exports = router;

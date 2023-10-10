@@ -13,11 +13,7 @@ const commentSchema = new Schema(
             ref: 'Product',
             required: true
         },
-        image: {
-            type: Schema.Types.ObjectId,
-            ref: 'Image',
-            required: true
-        },
+        
         message: {
             type: String,
             required: [true, 'Please, write a comment']

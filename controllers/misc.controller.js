@@ -7,9 +7,9 @@ const createError = require("http-errors");
 module.exports.createComment = (req, res, next) => {
   const data = {
     ...req.body,
-    currentUser: req.currentUser,
-    user: req.params.id,
+    user: req.currentUser,
     date: new Date(),
+product: req.params.id
   };
 
   Comment.create(data)

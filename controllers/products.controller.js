@@ -1,7 +1,8 @@
 const createHttpError = require('http-errors');
 const Product = require('../models/Products.model');
 const { StatusCodes } = require('http-status-codes');
-const stripe  = require('stripe')(process.env.STRIPE_SECRET_KEY);;
+const stripe  = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const Comment = require('../models/Comment.model');
 
 
 
@@ -110,6 +111,13 @@ module.exports.list = (req, res, next) => {
 
   // controller de comentarios
 
+  module.exports.getComments = (req, res, next) => {
+    Comment.find({ product: req.params.id })
+      .populate('user')
+      .then(comments => res.status(StatusCodes.OK).json(comments))
+      .catch(next);
+  }
+
 module.exports.doComments = (req, res, next) => {
    const data = {
      ...req.body,
@@ -117,6 +125,7 @@ module.exports.doComments = (req, res, next) => {
       product: req.params.id,
     };
     Comment.create(data)
+
     .then(comment => res.status(201).json(comment))
     .catch(next);
 }

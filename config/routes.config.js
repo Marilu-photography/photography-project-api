@@ -39,6 +39,7 @@ router.post('/images/:id/edited-image', authMiddleware.isAuthenticated,  upload.
 
 
 // COMMENTS
-router.post('/comments/:id', authMiddleware.isAuthenticated, productsController.doComments);
+router.get('/products/:id/comments', productsController.getComments);
+router.post('/products/:id/comments', authMiddleware.isAuthenticated, productsController.doComments);
 
 module.exports = router;

@@ -1,8 +1,6 @@
 const router = require('express').Router();
 
 const authMiddleware = require('../middlewares/auth.middleware');
-const isAdminMiddleware = require('../middlewares/isAdmin.middleware');
-
 const usersController = require('../controllers/users.controller')
 const authController = require('../controllers/auth.controller');
 const productsController = require('../controllers/products.controller');
@@ -31,7 +29,10 @@ router.post('/login', authController.login);
 //USER
 
 router.get('/users/me', authMiddleware.isAuthenticated, usersController.getCurrentUser)
+
 router.get('/profile/:id', usersController.userProfile)
+router.post('/profile/:userId', authMiddleware.isAuthenticated, upload.single('avatar'), usersController.edit);
+
 
 // IMAGES
 router.get('/images', imagesController.imagesList);

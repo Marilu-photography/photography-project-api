@@ -28,4 +28,34 @@ User.findById(req.params.id)
     .catch(next)
 }
 
+module.exports.edit = (req, res, next) => {
+    const data = {
+        ...req.body,
+    };
+
+    if (req.file) {
+        data.avatar = req.file.path;
+    }
+  
+    User.findByIdAndUpdate(req.params.userId, data, { new: true })
+  .then(user => {
+    if (user) {
+      const responseData = {
+        username: user.username,
+        name: user.name,
+        message: "Profile updated successfully."
+      };
+
+      res.status(StatusCodes.OK).json(responseData);
+    } else {
+      res.status(StatusCodes.NOT_FOUND).json({ error: "User not found." });
+    }
+  })
+  .catch(error => {
+    console.error(error);
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: "An error occurred while updating the profile." });
+  });
+}
+
+
 

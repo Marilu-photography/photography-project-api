@@ -24,8 +24,9 @@ product: req.params.id
 // GET COMMENTS
 
 module.exports.listComments = (req, res, next) => {
-  const { productId } = req.params; 
-  Comment.find({ product: productId })
+  const { id } = req.params; 
+  console.log(id)
+  Comment.find({ product: id })
     .populate("user")
     .populate("product")
     .then((comments) => {

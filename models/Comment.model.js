@@ -13,11 +13,7 @@ const commentSchema = new Schema(
             ref: 'Product',
             required: true
         },
-        image: {
-            type: Schema.Types.ObjectId,
-            ref: 'Image',
-            required: true
-        },
+        
         message: {
             type: String,
             required: [true, 'Please, write a comment']
@@ -30,7 +26,8 @@ const commentSchema = new Schema(
             type: Number,
             min: 1,
             max: 5,
-            default: 0
+            default: 0,
+            required: [true, 'Please, rate the product']
         }
     },
     {

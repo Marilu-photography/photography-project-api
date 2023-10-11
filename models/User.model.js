@@ -72,6 +72,13 @@ userSchema.virtual("images", {
   justOne: false,
 });
 
+userSchema.virtual("comments", {
+  ref: "Comment",
+  localField: "_id",
+  foreignField: "user",
+  justOne: false,
+});
+
 userSchema.pre("save", function (next) {
   const user = this;
 

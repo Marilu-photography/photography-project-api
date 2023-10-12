@@ -5,6 +5,7 @@
       "surname": "Leibovitz",
       "email": "usuario1@example.com",
       "password": "123456789",
+      "active": true,
       "isAdmin": false,
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Annie_Leibovitz-SF-1-Crop.jpg/800px-Annie_Leibovitz-SF-1-Crop.jpg"
     },
@@ -14,6 +15,7 @@
       "surname": "McCurry",
       "email": "usuario2@example.com",
       "password": "123456789",
+      "active": true,
       "isAdmin": false,
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Steve_McCurry_%285824371040%29_%28cropped%29.jpg"
     },
@@ -23,6 +25,7 @@
       "surname": "Goldin",
       "email": "usuario3@example.com",
       "password": "123456789",
+      "active": true,
       "isAdmin": false,
       "avatar": "https://media.revistavanityfair.es/photos/60e8505e76b409bfd6cb8caa/master/w_1600,c_limit/5770.jpg"
     },
@@ -32,6 +35,7 @@
       "surname": "Sherman",
       "email": "usuario4@example.com",
       "password": "123456789",
+      "active": true,
       "isAdmin": false,
       "avatar": "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQFEB_eulzT6_LlcKdMvj22bJXBJebsO8YpyZ6KdbwlxMdvDDiFCZV-j4nJPyOAFNfl"
     },
@@ -41,6 +45,7 @@
       "surname": "LaChapelle",
       "email": "usuario5@example.com",
       "password": "123456789",
+      "active": true,
       "isAdmin": false,
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/David_LaChapelle_Rudolfinum_4.JPG/1024px-David_LaChapelle_Rudolfinum_4.JPG"
     },
@@ -50,6 +55,7 @@
       "surname": "Salgado",
       "email": "usuario6@example.com",
       "password": "123456789",
+      "active": true,
       "isAdmin": false,
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Sebasti%C3%A3o_Salgado_01.jpg/2560px-Sebasti%C3%A3o_Salgado_01.jpg"
     },
@@ -59,6 +65,7 @@
       "surname": "Meyerowitz",
       "email": "usuario7@example.com",
       "password": "123456789",
+      "active": true,
       "isAdmin": false,
       "avatar": "https://i0.wp.com/fotogasteiz.com/blog/wp-content/uploads/2022/03/JOEL-MEYEROWITZ-pink.jpeg?w=3840&ssl=1"
     },
@@ -68,6 +75,7 @@
       "surname": "Gursky",
       "email": "usuario8@example.com",
       "password": "123456789",
+      "active": true,
       "isAdmin": false,
       "avatar": "http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcTxrbIKTG0zqytAoHcaRDSldREPQTHA0fSIPEae2GOwgD5iP2ECkjdEHZaa6t1TGYNb"
     },
@@ -77,6 +85,7 @@
       "surname": "Crewdson",
       "email": "usuario9@example.com",
       "password": "123456789",
+      "active": true,
       "isAdmin": false,
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/7/72/Gregory_Crewdson_2.jpg"
     },
@@ -86,6 +95,7 @@
       "surname": "Sixx",
       "email": "usuario10@example.com",
       "password": "123456789",
+      "active": true,
       "isAdmin": false,
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Nikki_Sixx.jpg/1024px-Nikki_Sixx.jpg"
     },
@@ -95,6 +105,7 @@
       "surname": "Photography",
       "email": "adminuser@example.com",
       "password": "123456789",
+      "active": true,
       "isAdmin": true,
       "avatar": "https://cdn1.iconfinder.com/data/icons/web-seo-and-marketing/512/camera-1024.png"
     }

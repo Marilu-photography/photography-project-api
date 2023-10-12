@@ -25,6 +25,7 @@ router.post('/products/checkout',authMiddleware.isAuthenticated, productsControl
 
 router.post('/register', upload.single('avatar'), authController.register);
 router.post('/login', authController.login);
+router.post('/send-activation-email', authController.sendActivationEmail);
 
 //USER
 

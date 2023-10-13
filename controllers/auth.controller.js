@@ -2,7 +2,7 @@ const User = require("../models/User.model");
 const { StatusCodes } = require("http-status-codes");
 const createError = require("http-errors");
 const jwt = require("jsonwebtoken");
-const { transporter } = require("../config/nodemailer.config");
+const { sendActivationEmail } = require("../config/nodemailer.config");
 
 module.exports.register = (req, res, next) => {
   const data = {
@@ -11,7 +11,9 @@ module.exports.register = (req, res, next) => {
   };
 
   User.create(data)
-    .then((user) => res.status(StatusCodes.CREATED).json(user))
+    .then((user) =>{ 
+      sendActivationEmail(user);
+      res.status(StatusCodes.CREATED).json(user)})
     .catch(next);
 };
 
@@ -48,27 +50,16 @@ module.exports.login = (req, res, next) => {
     .catch(next);
 };
 
-module.exports.sendActivationEmail = (req, res, next) => {
-  const user = req.body;
-  const activationLink = `${process.env.APP_HOST}/activate/${user.id}`;
+// ACTIVATE USER
 
-  transporter
-    .sendMail({
-      from: `onClick Photography <${process.env.EMAIL_ACCOUNT}>`,
-      to: user.email,
-      subject: "Activate your account",
-      html: `
-      <h1>Welcome ${user.name}!</h1>
-      <p>Thanks for joining us. Please, activate your account clicking on this link:</p>
-      <a href="${activationLink}">${activationLink}</a>
-    `,
-  })
-  .then(() => {
-    console.log("Email sent!");
-    res.status(StatusCodes.OK).json({ message: "Activation email sent" });
-  })
-  .catch((error) => {
-    console.error(error);
-    next(error);
-  });
-};
+module.exports.activateUser = (req, res, next) => {
+  const { id } = req.params;
+
+  User.findByIdAndUpdate(id, { active: true }, { new: true })
+    .then((user) => {
+      console.log(user, 'user activated');
+      res.json({ message: 'User activated successfully' });
+      }
+    )
+    .catch(next);
+}

@@ -1,18 +1,37 @@
-const nodeMailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 
 const email = process.env.EMAIL_ACCOUNT;
 
-const transporter = nodeMailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: email,
-        password: process.env.EMAIL_PASSWORD
-    }
+const transporter = nodemailer.createTransport({
+  service: "Gmail",
+  auth: {
+    user: email,
+    pass: process.env.EMAIL_PASSWORD,
+  },
 });
 
-transporter.verify().then(() => {
-    console.log('Ready for send emails');
-});
+module.exports.sendActivationEmail = (user) => {
+  const activationLink = `${process.env.API_HOST}/activate/${user.id}`;
 
-module.exports.transporter = transporter;
+  const userData = {
+    name: user.name,
+  };
 
+  transporter
+    .sendMail({
+      from: `onClick <${email}>`,
+      to: user.email,
+      subject: "Activate your account",
+      html: `
+      <h1>Hi ${userData.name}</h1>
+      <p>Thanks for registering!</p>
+      <a href="${activationLink}">Activate your account</a>
+        `,
+    })
+    .then(() => {
+      console.log(`Email sent to ${user.id}`);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};

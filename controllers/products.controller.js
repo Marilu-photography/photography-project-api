@@ -5,6 +5,34 @@ const stripe  = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const Comment = require('../models/Comment.model');
 
 
+module.exports.search = (req, res, next) => {
+  let { query } = req.query;
+
+  // Verificar si query es un objeto y convertirlo a cadena si es necesario
+  if (typeof query === 'object') {
+    query = JSON.stringify(query);
+  }
+
+  // Verificar si query es una cadena JSON y convertirla a objeto si es necesario
+  if (isJsonString(query)) {
+    query = JSON.parse(query);
+  }
+
+  Product.find({ $text: { $search: query } })
+    .then(products => res.status(StatusCodes.OK).json(products))
+    .catch(next);
+}
+
+// Función para verificar si una cadena es un objeto JSON válido
+function isJsonString(str) {
+  try {
+    JSON.parse(str);
+  } catch (e) {
+    return false;
+  }
+  return true;
+}
+
 
 
 module.exports.create = (req, res, next) => {

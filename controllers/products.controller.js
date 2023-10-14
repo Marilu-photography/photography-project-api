@@ -97,13 +97,15 @@ module.exports.list = (req, res, next) => {
         quantity: product.quantity,
       }
     });
+
+    
   
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: lineProducts,
       mode: 'payment',
-      success_url: `${process.env.APP_WEB}/cart?success=true`,
-      cancel_url: `${process.env.APP_WEB}/cart?canceled=true`,
+      success_url: `${process.env.API_HOST}/cart?success=true`,
+      cancel_url: `${process.env.API_HOST}/cart?canceled=true`,
     });
   
     res.json({url: session.url});

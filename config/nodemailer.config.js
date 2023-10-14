@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
 });
 
 module.exports.sendActivationEmail = (user) => {
-  const activationLink = `${process.env.API_HOST}/activate/${user.id}`;
+  const activationLink = `${process.env.API_HOST}/login?activate=${user.id}`;
 
   const userData = {
     name: user.name,
@@ -35,3 +35,29 @@ module.exports.sendActivationEmail = (user) => {
       console.error(err);
     });
 };
+
+module.exports.sendInvoice = (user) => {
+
+  const userData = {
+    name: user.name,
+  };
+
+  transporter
+    .sendMail({
+      from: `onClick <${email}>`,
+      to: user.email,
+      subject: "Invoice",
+      html: `
+      <h1>Hi ${userData.name}</h1>
+      <p>Thanks for buying!</p>
+      <a href="${activationLink}">Activate your account</a>
+        `,
+    })
+    .then(() => {
+      console.log(`Email sent to ${user.id}`);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
+

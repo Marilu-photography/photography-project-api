@@ -63,3 +63,18 @@ module.exports.activateUser = (req, res, next) => {
     )
     .catch(next);
 }
+
+// GET USER
+
+module.exports.getUser = (req, res, next) => {
+  const id  = req.query;
+  console.log(id, 'id');
+
+  User.findById(id)
+    .then((user) => {
+      console.log(user, 'user activated');
+      res.json(user);
+      }
+    )
+    .catch(next);
+}

@@ -2,14 +2,18 @@ const User = require("../models/User.model");
 const { StatusCodes } = require("http-status-codes");
 const createError = require("http-errors");
 const jwt = require("jsonwebtoken");
+const { sendActivationEmail } = require("../config/nodemailer.config");
 
 module.exports.register = (req, res, next) => {
-  const data = { 
+  const data = {
     ...req.body,
-    avatar: req.file ? req.file.path : undefined, };
+    avatar: req.file ? req.file.path : undefined,
+  };
 
   User.create(data)
-    .then((user) => res.status(StatusCodes.CREATED).json(user))
+    .then((user) =>{ 
+      sendActivationEmail(user);
+      res.status(StatusCodes.CREATED).json(user)})
     .catch(next);
 };
 
@@ -45,3 +49,32 @@ module.exports.login = (req, res, next) => {
     })
     .catch(next);
 };
+
+// ACTIVATE USER
+
+module.exports.activateUser = (req, res, next) => {
+  const { id } = req.params;
+
+  User.findByIdAndUpdate(id, { active: true }, { new: true })
+    .then((user) => {
+      console.log(user, 'user activated');
+      res.json({ message: 'User activated successfully' });
+      }
+    )
+    .catch(next);
+}
+
+// GET USER
+
+module.exports.getUser = (req, res, next) => {
+  const id  = req.query;
+  console.log(id, 'id');
+
+  User.findById(id)
+    .then((user) => {
+      console.log(user, 'user activated');
+      res.json(user);
+      }
+    )
+    .catch(next);
+}

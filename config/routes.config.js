@@ -28,6 +28,8 @@ router.post('/products/checkout',authMiddleware.isAuthenticated, productsControl
 
 router.post('/register', upload.single('avatar'), authController.register);
 router.post('/login', authController.login);
+//router.get('/login', authController.getUser);
+router.get('/activate/:id', authController.activateUser);
 
 //USER
 

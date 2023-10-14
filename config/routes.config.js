@@ -12,6 +12,9 @@ const miscController = require('../controllers/misc.controller');
 // MISC
 router.get('/editor/:id',authMiddleware.isAuthenticated, upload.single('imageUrl'), imagesController.editorTool);
 
+//SEARCH ROUTE
+router.get('/search', productsController.search);
+
 // PRODUCTS
 router.post('/create', authMiddleware.isAuthenticated, upload.single(`image`), productsController.create);
 router.get('/', productsController.list);

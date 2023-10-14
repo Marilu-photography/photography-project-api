@@ -58,6 +58,11 @@ const productSchema = new mongoose.Schema({
   
 });
 
+productSchema.index({
+  name: 'text',
+  description: 'text',
+});
+
 productSchema.virtual('comments', {
   ref: 'Comment',
   localField: '_id',

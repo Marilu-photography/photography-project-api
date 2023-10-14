@@ -83,6 +83,13 @@ userSchema.virtual("comments", {
   justOne: false,
 });
 
+userSchema.virtual("order", {
+  ref: "Order",
+  localField: "_id",
+  foreignField: "user",
+  justOne: false,
+});
+
 userSchema.pre("save", function (next) {
   const user = this;
 

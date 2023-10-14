@@ -70,6 +70,13 @@ productSchema.virtual('comments', {
   justOne: false,
 });
 
+productSchema.virtual('order', {
+  ref: 'Order',
+  localField: '_id',
+  foreignField: 'product',
+  justOne: false,
+});
+
 const Product = mongoose.model('Product', productSchema);
 
 module.exports = Product;

@@ -28,10 +28,15 @@ module.exports.login = (req, res, next) => {
     return next(loginError);
   }
 
-  User.findOne({ email })
+  const activatedError = createError(
+    StatusCodes.UNAUTHORIZED,
+    "You need to activate your account. Please check your email"
+  );
+
+  User.findOne({email, active: true})
     .then((user) => {
       if (!user) {
-        return next(loginError);
+        return next(activatedError);
       }
       return user.checkPassword(password).then((match) => {
         if (!match) {

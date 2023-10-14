@@ -10,14 +10,17 @@ const orderSchema = new Schema(
             required: true
         },
         products: [{
-            type: Schema.Types.ObjectId,
-            ref: 'Product',
-            required: true
+            product: {
+                type: Schema.Types.ObjectId,
+                ref: 'Product',
+                required: true
+            },
+            quantity: {
+                type: Number,
+                default: 1
+            }
         }],
-        total: {
-            type: Number,
-            required: true
-        },
+
         date: {
             type: Date,
             default: Date.now

@@ -22,13 +22,12 @@ router.patch('/products/:id', authMiddleware.isAuthenticated,upload.single(`imag
 router.get('/products/:id', productsController.productDetail);
 router.delete('/products/:id/', authMiddleware.isAuthenticated, productsController.deleteProduct);
 router.post('/products/checkout',authMiddleware.isAuthenticated, productsController.createCheckoutSession);
-
+router.get('/products/checkout/success/:id',authMiddleware.isAuthenticated, productsController.success);
 
 // AUTH
 
 router.post('/register', upload.single('avatar'), authController.register);
 router.post('/login', authController.login);
-//router.get('/login', authController.getUser);
 router.get('/activate/:id', authController.activateUser);
 
 //USER

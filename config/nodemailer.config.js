@@ -1,4 +1,6 @@
 const nodemailer = require("nodemailer");
+const getWelcomeMessage = require("../misc/bienvenida");
+
 
 const email = process.env.EMAIL_ACCOUNT;
 
@@ -11,7 +13,7 @@ const transporter = nodemailer.createTransport({
 });
 
 module.exports.sendActivationEmail = (user) => {
-  const activationLink = `${process.env.API_HOST}/login?activate=${user.id}`;
+  const activationLink = `${process.env.APP_HOST}/login?activate=${user.id}`;
 
   const userData = {
     name: user.name,
@@ -22,11 +24,7 @@ module.exports.sendActivationEmail = (user) => {
       from: `onClick <${email}>`,
       to: user.email,
       subject: "Activate your account",
-      html: `
-      <h1>Hi ${userData.name}</h1>
-      <p>Thanks for registering!</p>
-      <a href="${activationLink}">Activate your account</a>
-        `,
+      html: getWelcomeMessage(userData, activationLink),
     })
     .then(() => {
       console.log(`Email sent to ${user.id}`);
@@ -36,7 +34,7 @@ module.exports.sendActivationEmail = (user) => {
     });
 };
 
-module.exports.sendInvoice = (user) => {
+module.exports.sendInvoice = (user, order) => {
 
   const userData = {
     name: user.name,
@@ -46,12 +44,13 @@ module.exports.sendInvoice = (user) => {
     .sendMail({
       from: `onClick <${email}>`,
       to: user.email,
-      subject: "Invoice",
+      subject: `order ${order.id} ${order.date} `,
       html: `
       <h1>Hi ${userData.name}</h1>
       <p>Thanks for buying!</p>
-      <a href="${activationLink}">Activate your account</a>
-        `,
+      <p>This is your order</p>
+      <p>${order.products.map(product => {
+    return `<p>${product.name}</p>`})}</p>`,
     })
     .then(() => {
       console.log(`Email sent to ${user.id}`);

@@ -36,11 +36,12 @@ function isJsonString(str) {
 
 module.exports.create = (req, res, next) => {
 
+  console.log(req.files)
 
   const data = {
     ...req.body,
     owner: req.currentUser,
-    image: req.file ? req.file.path : undefined,
+    images: req.files ? req.files.map(file => file.path) : undefined,
   };
 
   Product.create(data)
@@ -68,7 +69,7 @@ module.exports.edit = (req, res, next) => {
   const data = {
     ...req.body,
     owner: req.currentUser,
-    image: req.file ? req.file.path : undefined,
+    images: req.files ? req.files.map(file => file.path) : undefined,
   };
 
 
@@ -96,7 +97,7 @@ module.exports.createCheckoutSession = async (req, res, next) => {
         product_data: {
           name: product.name,
           description: product.description,
-          images: [product.image]
+          images: [product.images[0]]
         },
         unit_amount: parseFloat((product.price * 100).toFixed(2)),
       },
@@ -104,14 +105,16 @@ module.exports.createCheckoutSession = async (req, res, next) => {
     }
   });
 
+  const orderProducts = products.map(product => {
+    return {
+      product: product._id,
+      quantity: product.quantity, 
+    };
+  });
+
   Order.create({
     user: req.currentUser,
-    products: products.map(product => {
-      return {
-        product: product._id,
-        quantity: product.quantity
-      };
-    })
+    products: orderProducts
   })
     .then(order => {
       stripe.checkout.sessions.create({
@@ -135,12 +138,12 @@ module.exports.success = (req, res, next) => {
 
   User.findById(user)
     .then(user => {
-      Order.findOne({ _id: order, status: 'pending' })
+      Order.findOne({ _id: order, status: 'Pending' })
         .populate('products.product')
         .then(order => {
           if (order) {
             sendInvoice(user, order)
-            Order.findByIdAndUpdate(order.id, { status: 'paid' })
+            Order.findByIdAndUpdate(order.id, { status: 'Paid' })
               .then(() => res.json({ message: 'Order paid' }))
               .catch(next);
           } else { return res.json({ message: 'Order already paid' }); }

@@ -7,10 +7,10 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Name is required.'],
   },
-  image: {
+  images: [{
     type: String,
     required: [true, 'Image is required.'],
-  },
+  }],
   description: {
     type: String,
     required: [true, 'Description is required.']
@@ -33,9 +33,11 @@ const productSchema = new mongoose.Schema({
     type: String,
     enum: BRAND,
   },
-  model: String,
-  availability: Boolean,
-  
+  model: {
+    String,
+    availability: Boolean
+  },
+
   cameraType: {
     type: String,
     enum: CAMERATYPE,
@@ -53,10 +55,11 @@ const productSchema = new mongoose.Schema({
     ref: 'User',
     required: [true, 'Owner is required.']
   },
-}, 
-{ timestamps: true
-  
-});
+},
+  {
+    timestamps: true
+
+  });
 
 productSchema.index({
   name: 'text',
@@ -73,7 +76,7 @@ productSchema.virtual('comments', {
 productSchema.virtual('order', {
   ref: 'Order',
   localField: '_id',
-  foreignField: 'product',
+  foreignField: 'products',
   justOne: false,
 });
 

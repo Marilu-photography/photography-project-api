@@ -1,12 +1,14 @@
 const router = require('express').Router();
 
+const upload = require('../config/storage.config');
+
 const authMiddleware = require('../middlewares/auth.middleware');
 const usersController = require('../controllers/users.controller')
 const authController = require('../controllers/auth.controller');
 const productsController = require('../controllers/products.controller');
 const imagesController = require('../controllers/images.controller');
-const upload = require('../config/storage.config');
 const miscController = require('../controllers/misc.controller');
+const ordersController = require('../controllers/orders.controller');
 
 
 // MISC
@@ -33,7 +35,6 @@ router.get('/activate/:id', authController.activateUser);
 //USER
 
 router.get('/users/me', authMiddleware.isAuthenticated, usersController.getCurrentUser)
-
 router.get('/profile/:id', usersController.userProfile)
 router.post('/profile/:userId', authMiddleware.isAuthenticated, upload.single('avatar'), usersController.edit);
 
@@ -49,5 +50,9 @@ router.post('/images/:id/edited-image', authMiddleware.isAuthenticated,  upload.
 router.get('/comments/list/:id', miscController.listComments);
 router.post('/comments/create/:id', authMiddleware.isAuthenticated, miscController.createComment);
 router.delete('/comments/delete/:id', authMiddleware.isAuthenticated, miscController.deleteComment);
+
+// ORDERS
+
+router.get('/orders', authMiddleware.isAuthenticated, ordersController.listOrders);
 
 module.exports = router;

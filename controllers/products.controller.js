@@ -10,13 +10,10 @@ const { sendInvoice } = require('../config/nodemailer.config');
 
 module.exports.search = (req, res, next) => {
   let { query } = req.query;
-
-  // Verificar si query es un objeto y convertirlo a cadena si es necesario
   if (typeof query === 'object') {
     query = JSON.stringify(query);
   }
 
-  // Verificar si query es una cadena JSON y convertirla a objeto si es necesario
   if (isJsonString(query)) {
     query = JSON.parse(query);
   }
@@ -26,7 +23,6 @@ module.exports.search = (req, res, next) => {
     .catch(next);
 }
 
-// Función para verificar si una cadena es un objeto JSON válido
 function isJsonString(str) {
   try {
     JSON.parse(str);
@@ -46,7 +42,6 @@ module.exports.create = (req, res, next) => {
     owner: req.currentUser,
     image: req.file ? req.file.path : undefined,
   };
-  // aquí ira lo delos archivos
 
   Product.create(data)
     .then(product => res.status(201).json(product))
@@ -149,7 +144,7 @@ module.exports.success = (req, res, next) => {
               .then(() => res.json({ message: 'Order paid' }))
               .catch(next);
           } else { return res.json({ message: 'Order already paid' }); }
-          
+
 
         })
         .catch(next);

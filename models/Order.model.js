@@ -29,7 +29,15 @@ const orderSchema = new Schema(
             type: String,
             enum: ['pending', 'paid', 'cancelled'],
             default: 'pending'
-        }
+        },
+        orderNumber: {
+            type: String,
+            unique: true,
+          },
+          orderName: {
+            type: String,
+            unique: true,
+          },
     },
     {
         timestamps: true,
@@ -44,6 +52,22 @@ const orderSchema = new Schema(
         }
     }
 );
+
+orderSchema.pre('save', async function (next) {
+    try {
+        const count = await this.constructor.countDocuments();
+        const orderNumber = `00${count + 1}`.slice(-3);
+        const formattedDate = this.createdAt.toISOString().slice(0, 10).replace(/-/g, '');
+        const orderName = `onClick-order-${orderNumber}-${formattedDate}`;
+
+        this.orderNumber = orderNumber;
+        this.orderName = orderName;
+
+        next();
+    } catch (err) {
+        next(err);
+    }
+});
 
 const Order = mongoose.model('Order', orderSchema);
 module.exports = Order;

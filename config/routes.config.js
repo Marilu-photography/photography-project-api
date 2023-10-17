@@ -53,6 +53,6 @@ router.delete('/comments/delete/:id', authMiddleware.isAuthenticated, miscContro
 
 // ORDERS
 router.get('/orders', authMiddleware.isAuthenticated, ordersController.listOrders);
-router.get('/orders/update-status/:id', authMiddleware.isAuthenticated, ordersController.updateOrderStatus);
+router.post('/orders/update-status/:id', authMiddleware.isAuthenticated, ordersController.updateOrderStatus);
 
 module.exports = router;

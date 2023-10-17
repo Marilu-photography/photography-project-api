@@ -74,9 +74,6 @@ module.exports.sendInvoice = (user, order) => {
 
 module.exports.sendStatusMail = (user, order) => {
 
-  const userData = {
-    name: user.name,
-  };
 
   transporter
     .sendMail({
@@ -84,12 +81,10 @@ module.exports.sendStatusMail = (user, order) => {
       to: user.email,
       subject: `Your order is ${order.status} `,
       html: `
-      <h1>Hi ${userData.name}</h1>
+      <h1>Hi ${user.name}</h1>
       <p>Your order is ${order.status}</p>
       <p>This is your order</p>
-      <p>${order.products.map(product => {
-        return `<p>${product.name}</p>`}
-        )}</p>`,
+     `,
     })
     .then(() => {
       console.log(`Email sent to ${user.id}`);

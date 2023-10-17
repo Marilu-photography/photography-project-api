@@ -13,7 +13,7 @@ const orderSchema = new Schema(
             product: {
                 type: Schema.Types.ObjectId,
                 ref: 'Product',
-                
+
             },
             image: {
                 type: Schema.Types.ObjectId,
@@ -24,9 +24,6 @@ const orderSchema = new Schema(
                 default: 1
             }
         }],
-
-
-
         date: {
             type: Date,
             default: Date.now
@@ -58,17 +55,6 @@ const orderSchema = new Schema(
         }
     }
 );
-
-orderSchema.virtual('orderTotal').get(function () {
-    const total = this.items.reduce((acc, item) => {
-        const productPrice = item.product.price;
-        const imagePrice = item.image.price; 
-        const productQuantity = item.quantity;
-        return acc + (productPrice + imagePrice) * productQuantity;
-    }, 0);
-
-    return total;
-});
 
 orderSchema.pre('save', async function (next) {
     try {

@@ -3,6 +3,7 @@ const Product = require('../models/Products.model');
 const Order = require('../models/Order.model');
 const Comment = require('../models/Comment.model');
 const User = require('../models/User.model');
+const Image = require('../models/Images.model');
 const { StatusCodes } = require('http-status-codes');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const { sendInvoice } = require('../config/nodemailer.config');
@@ -36,11 +37,12 @@ function isJsonString(str) {
 
 module.exports.create = (req, res, next) => {
 
+  console.log(req.files)
 
   const data = {
     ...req.body,
     owner: req.currentUser,
-    image: req.file ? req.file.path : undefined,
+    images: req.files ? req.files.map(file => file.path) : undefined,
   };
 
   Product.create(data)
@@ -68,7 +70,7 @@ module.exports.edit = (req, res, next) => {
   const data = {
     ...req.body,
     owner: req.currentUser,
-    image: req.file ? req.file.path : undefined,
+    images: req.files ? req.files.map(file => file.path) : undefined,
   };
 
 
@@ -85,18 +87,16 @@ module.exports.deleteProduct = (req, res, next) => {
 
 
 module.exports.createCheckoutSession = async (req, res, next) => {
-  const products = req.body;
+  const items = req.body;
 
-  console.log(products);
-
-  const lineProducts = products.map(product => {
+  const lineItems = items.filter(item => item.productType === 'product')
+  .map(product => {
     return {
       price_data: {
         currency: 'eur',
         product_data: {
           name: product.name,
-          description: product.description,
-          images: [product.image]
+          images: [product.images[0]]
         },
         unit_amount: parseFloat((product.price * 100).toFixed(2)),
       },
@@ -104,14 +104,40 @@ module.exports.createCheckoutSession = async (req, res, next) => {
     }
   });
 
+  const lineImages = items.filter(item => item.productType === 'image')
+  .map(image => {
+    return {
+      price_data: {
+        currency: 'eur',
+        product_data: {
+          name: image.name,
+          images: [image.images[0]]
+        },
+        unit_amount: parseFloat((image.price * 100).toFixed(2)),
+      },
+      quantity: image.quantity,
+    }
+  });
+
+
+const lineProducts = [...lineItems, ...lineImages];
+
+  const orderProducts = items.map(item => {
+  if (item.productType === 'product') {
+    return {
+      product: item._id,
+      quantity: item.quantity, 
+    }} else if (item.productType === 'image') { 
+      return {
+        image: item._id,
+        quantity: item.quantity, 
+      }
+    }
+  });
+
   Order.create({
     user: req.currentUser,
-    products: products.map(product => {
-      return {
-        product: product._id,
-        quantity: product.quantity
-      };
-    })
+    items: orderProducts
   })
     .then(order => {
       stripe.checkout.sessions.create({
@@ -135,12 +161,13 @@ module.exports.success = (req, res, next) => {
 
   User.findById(user)
     .then(user => {
-      Order.findOne({ _id: order, status: 'pending' })
-        .populate('products.product')
+      Order.findOne({ _id: order, status: 'Pending' })
+        .populate('items.product')
+        .populate('items.image')
         .then(order => {
           if (order) {
             sendInvoice(user, order)
-            Order.findByIdAndUpdate(order.id, { status: 'paid' })
+            Order.findByIdAndUpdate(order.id, { status: 'Paid' })
               .then(() => res.json({ message: 'Order paid' }))
               .catch(next);
           } else { return res.json({ message: 'Order already paid' }); }

@@ -9,11 +9,15 @@ const orderSchema = new Schema(
             ref: 'User',
             required: true
         },
-        products: [{
+        items: [{
             product: {
                 type: Schema.Types.ObjectId,
                 ref: 'Product',
-                required: true
+                
+            },
+            image: {
+                type: Schema.Types.ObjectId,
+                ref: 'Image',
             },
             quantity: {
                 type: Number,
@@ -21,23 +25,25 @@ const orderSchema = new Schema(
             }
         }],
 
+
+
         date: {
             type: Date,
             default: Date.now
         },
         status: {
             type: String,
-            enum: ['pending', 'paid', 'cancelled'],
-            default: 'pending'
+            enum: ['Pending', 'Paid', 'Prepared', 'Sent', 'Delivered'],
+            default: 'Pending'
         },
         orderNumber: {
             type: String,
             unique: true,
-          },
-          orderName: {
+        },
+        orderName: {
             type: String,
             unique: true,
-          },
+        },
     },
     {
         timestamps: true,
@@ -52,6 +58,17 @@ const orderSchema = new Schema(
         }
     }
 );
+
+orderSchema.virtual('orderTotal').get(function () {
+    const total = this.items.reduce((acc, item) => {
+        const productPrice = item.product.price;
+        const imagePrice = item.image.price; 
+        const productQuantity = item.quantity;
+        return acc + (productPrice + imagePrice) * productQuantity;
+    }, 0);
+
+    return total;
+});
 
 orderSchema.pre('save', async function (next) {
     try {

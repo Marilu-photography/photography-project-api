@@ -5,10 +5,10 @@ const imageSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Name is required.'],
     },
-    imageUrl: {
+    images: [{
         type: String,
         required: [true, 'Image is required.']
-    },
+    }],
     description: {
         type: String,
     },
@@ -23,10 +23,21 @@ const imageSchema = new mongoose.Schema({
     editedImageUrl: {
         type: String,
     },
+    productType: {
+        type: String,
+        default: 'image'
+    },
     },
 { timestamps: true
   
 });
+
+imageSchema.virtual('order', {
+    ref: 'Order',
+    localField: '_id',
+    foreignField: 'image',
+    justOne: false,
+  });
 
 const Image = mongoose.model('Image', imageSchema);
 

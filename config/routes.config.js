@@ -16,12 +16,13 @@ router.get('/editor/:id',authMiddleware.isAuthenticated, upload.single('imageUrl
 router.get('/search', productsController.search);
 
 // PRODUCTS
-router.post('/create', authMiddleware.isAuthenticated, upload.single(`image`), productsController.create);
+router.post('/create', authMiddleware.isAuthenticated, upload.array('images', 5) , productsController.create);
 router.get('/', productsController.list);
 router.patch('/products/:id', authMiddleware.isAuthenticated,upload.single(`image`), productsController.edit);
 router.get('/products/:id', productsController.productDetail);
 router.delete('/products/:id/', authMiddleware.isAuthenticated, productsController.deleteProduct);
 router.post('/products/checkout',authMiddleware.isAuthenticated, productsController.createCheckoutSession);
+
 
 
 // AUTH

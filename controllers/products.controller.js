@@ -4,26 +4,32 @@ const { StatusCodes } = require('http-status-codes');
 const stripe  = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const Comment = require('../models/Comment.model');
 
+const escapeRegex = (text) => {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 
 module.exports.search = (req, res, next) => {
   let { query } = req.query;
 
-  // Verificar si query es un objeto y convertirlo a cadena si es necesario
   if (typeof query === 'object') {
     query = JSON.stringify(query);
   }
 
-  // Verificar si query es una cadena JSON y convertirla a objeto si es necesario
   if (isJsonString(query)) {
     query = JSON.parse(query);
   }
 
-  Product.find({ $text: { $search: query } })
-    .then(products => res.status(StatusCodes.OK).json(products))
+  // Si query es una cadena, usa una búsqueda de texto normal, de lo contrario, usa una expresión regular
+  const searchQuery = typeof query === 'string' ? { $text: { $search: query } } : { yourTextField: { $regex: query, $options: 'i' } };
+  console.log("Consulta:", searchQuery);
+  Product.find(searchQuery)
+    .then(products => {
+      console.log("Resultados de búsqueda:", products);
+      res.status(StatusCodes.OK).json(products);
+    })
     .catch(next);
 }
 
-// Función para verificar si una cadena es un objeto JSON válido
 function isJsonString(str) {
   try {
     JSON.parse(str);
@@ -41,7 +47,7 @@ module.exports.create = (req, res, next) => {
   const data = {
     ...req.body,
     owner: req.currentUser,
-    image: req.file ? req.file.path : undefined,
+    images: req.files ? req.files.map(file => file.path) : undefined,
 };
   // aquí ira lo delos archivos
 
@@ -132,8 +138,8 @@ module.exports.list = (req, res, next) => {
       payment_method_types: ['card'],
       line_items: lineProducts,
       mode: 'payment',
-      success_url: `${process.env.API_HOST}/cart?success=true`,
-      cancel_url: `${process.env.API_HOST}/cart?canceled=true`,
+      success_url: `${process.env.APP_HOST}/cart?success=true`,
+      cancel_url: `${process.env.APP_HOST}/cart?canceled=true`,
     });
   
     res.json({url: session.url});

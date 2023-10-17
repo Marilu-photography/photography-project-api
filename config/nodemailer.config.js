@@ -39,18 +39,30 @@ module.exports.sendInvoice = (user, order) => {
   const userData = {
     name: user.name,
   };
+  const itemsList = order.items
+    .filter(item => item.product && item.image)
+    .map(item => {
+      return `
+        <p>Product Name: ${item.product.name}</p>
+        <p>Image Name: ${item.image.name}</p>
+        <p>Quantity: ${item.quantity}</p>
+        <p>Price per Product: ${item.product.price}</p>
+        <p>Price per Image: ${item.image.price}</p>
+      `;
+    })
+    .join('');
 
   transporter
     .sendMail({
       from: `onClick <${email}>`,
       to: user.email,
-      subject: `order ${order.id} ${order.date} `,
+      subject: `Order ${order.id} - ${order.date}`,
       html: `
-      <h1>Hi ${userData.name}</h1>
-      <p>Thanks for buying!</p>
-      <p>This is your order</p>
-      <p>${order.products.map(product => {
-    return `<p>${product.name}</p>`})}</p>`,
+        <h1>Hi ${userData.name}</h1>
+        <p>Thanks for buying!</p>
+        <p>This is your order:</p>
+        ${itemsList}
+      `,
     })
     .then(() => {
       console.log(`Email sent to ${user.id}`);
@@ -60,3 +72,29 @@ module.exports.sendInvoice = (user, order) => {
     });
 };
 
+module.exports.sendStatusMail = (user, order) => {
+
+  const userData = {
+    name: user.name,
+  };
+
+  transporter
+    .sendMail({
+      from: `onClick <${email}>`,
+      to: user.email,
+      subject: `Your order is ${order.status} `,
+      html: `
+      <h1>Hi ${userData.name}</h1>
+      <p>Your order is ${order.status}</p>
+      <p>This is your order</p>
+      <p>${order.products.map(product => {
+        return `<p>${product.name}</p>`}
+        )}</p>`,
+    })
+    .then(() => {
+      console.log(`Email sent to ${user.id}`);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};

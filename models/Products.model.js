@@ -55,6 +55,10 @@ const productSchema = new mongoose.Schema({
     ref: 'User',
     required: [true, 'Owner is required.']
   },
+  productType: {
+    type: String,
+    default: 'product'
+  },
 },
   {
     timestamps: true
@@ -76,7 +80,7 @@ productSchema.virtual('comments', {
 productSchema.virtual('order', {
   ref: 'Order',
   localField: '_id',
-  foreignField: 'products',
+  foreignField: 'product',
   justOne: false,
 });
 

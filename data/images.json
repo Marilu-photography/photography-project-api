@@ -1,44 +1,50 @@
 [
     {
       "name": "Image 1",
-      "imageUrl": "https://okdiario.com/img/2021/04/04/como-utilizan-los-gatos-la-lengua-para-acicalarse.jpg",
+      "images": ["https://madridando.com/wp-content/uploads/2018/07/gran-via-noche.jpeg"],
       "description": "Image 1 Description",
       "price": 9.99,
+      "productType": "image",
       "author": "AnnieLei"
     },
     {
       "name": "Image 2",
-      "imageUrl": "https://madridando.com/wp-content/uploads/2018/07/gran-via-noche.jpeg",
+      "images": ["https://madridando.com/wp-content/uploads/2018/07/gran-via-noche.jpeg"],
       "description": "Image 2 Description",
       "price": 14.99,
+      "productType": "image",
       "author": "NikkiSixx"
     },
     {
       "name": "Image 3",
-      "imageUrl": "https://www.flormoments.com/blog/wp-content/uploads/schema-and-structured-data-for-wp/QUE-ES-UNA-FLOR-PRESERVADA-Y-COMO-SE-HACE-1200x900.jpg",
+      "images": ["https://www.flormoments.com/blog/wp-content/uploads/schema-and-structured-data-for-wp/QUE-ES-UNA-FLOR-PRESERVADA-Y-COMO-SE-HACE-1200x900.jpg"],
       "description": "Image 3 Description",
       "price": 19.99,
+      "productType": "image",
       "author": "GregoryCrewdson"
     },
     {
       "name": "Image 4",
-      "imageUrl": "https://www.archisevilla.org/wp-content/uploads/2016/04/amigos.jpg",
+      "images": ["https://www.archisevilla.org/wp-content/uploads/2016/04/amigos.jpg"],
       "description": "Image 4 Description",
       "price": 12.99,
+      "productType": "image",
       "author": "AndreasGursky"
     },
     {
       "name": "Image 5",
-      "imageUrl": "https://www.archisevilla.org/wp-content/uploads/2016/04/amigos.jpg",
+      "images": ["https://www.archisevilla.org/wp-content/uploads/2016/04/amigos.jpg"],
       "description": "Image 5 Description",
       "price": 12.99,
+      "productType": "image",
       "author": "JoelMeyerowitz"
     },
     {
       "name": "Image 6",
-      "imageUrl": "https://www.archisevilla.org/wp-content/uploads/2016/04/amigos.jpg",
+      "images": ["https://www.archisevilla.org/wp-content/uploads/2016/04/amigos.jpg"],
       "description": "Image 6 Description",
       "price": 12.99,
+      "productType": "image",
       "author": "AnnieLei"
     }
   ]

@@ -3,6 +3,7 @@ const Product = require('../models/Products.model');
 const Order = require('../models/Order.model');
 const Comment = require('../models/Comment.model');
 const User = require('../models/User.model');
+const Image = require('../models/Images.model');
 const { StatusCodes } = require('http-status-codes');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const { sendInvoice } = require('../config/nodemailer.config');
@@ -86,17 +87,15 @@ module.exports.deleteProduct = (req, res, next) => {
 
 
 module.exports.createCheckoutSession = async (req, res, next) => {
-  const products = req.body;
+  const items = req.body;
 
-  console.log(products);
-
-  const lineProducts = products.map(product => {
+  const lineItems = items.filter(item => item.productType === 'product')
+  .map(product => {
     return {
       price_data: {
         currency: 'eur',
         product_data: {
           name: product.name,
-          description: product.description,
           images: [product.images[0]]
         },
         unit_amount: parseFloat((product.price * 100).toFixed(2)),
@@ -105,16 +104,40 @@ module.exports.createCheckoutSession = async (req, res, next) => {
     }
   });
 
-  const orderProducts = products.map(product => {
+  const lineImages = items.filter(item => item.productType === 'image')
+  .map(image => {
     return {
-      product: product._id,
-      quantity: product.quantity, 
-    };
+      price_data: {
+        currency: 'eur',
+        product_data: {
+          name: image.name,
+          images: [image.images[0]]
+        },
+        unit_amount: parseFloat((image.price * 100).toFixed(2)),
+      },
+      quantity: image.quantity,
+    }
+  });
+
+
+const lineProducts = [...lineItems, ...lineImages];
+
+  const orderProducts = items.map(item => {
+  if (item.productType === 'product') {
+    return {
+      product: item._id,
+      quantity: item.quantity, 
+    }} else if (item.productType === 'image') { 
+      return {
+        image: item._id,
+        quantity: item.quantity, 
+      }
+    }
   });
 
   Order.create({
     user: req.currentUser,
-    products: orderProducts
+    items: orderProducts
   })
     .then(order => {
       stripe.checkout.sessions.create({
@@ -139,7 +162,8 @@ module.exports.success = (req, res, next) => {
   User.findById(user)
     .then(user => {
       Order.findOne({ _id: order, status: 'Pending' })
-        .populate('products.product')
+        .populate('items.product')
+        .populate('items.image')
         .then(order => {
           if (order) {
             sendInvoice(user, order)

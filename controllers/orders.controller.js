@@ -1,17 +1,22 @@
 const createHttpError = require('http-errors');
 const Order = require('../models/Order.model');
 const Product = require('../models/Products.model');
+const Image = require('../models/Images.model');
 const { StatusCodes } = require("http-status-codes");
 
 module.exports.listOrders = (req, res, next) => {
     Order.find()
         .populate('user')
         .populate({
-            path: 'products.product', // Populate the 'product' field within 'products'
+            path: 'items.product',
             model: 'Product',
         })
+        .populate({
+            path: 'items.image',
+            model: 'Image',
+        })
         .then((orders) => {
-            const ordersWithProducts = [];
+            const ordersWithProductsAndImages = [];
             const findProductsForOrder = (order) => {
                 return Promise.all(order.products.map(async (productEntry) => {
                     const product = await Product.findById(productEntry.product);
@@ -57,4 +62,3 @@ module.exports.updateOrderStatus = (req, res, next) => {
 };
 
 
-// un controlador donde le paso el orderid y el body con el status

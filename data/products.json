@@ -1,5 +1,6 @@
 [
   {
+    "productType": "product",
     "name": "Nikon D850",
     "images": [
       "https://tienda.nikonistas.com/es/img2/2021/02/webfrontal-solo-cuerpo-02_nikon_dslr_d850_zs_950x807_950x807.jpg"
@@ -16,6 +17,7 @@
     "accessoryType": "Battery"
   },
   {
+    "productType": "product",
     "name": "Canon EF 50mm f/1.8 Lens",
     "images": [
       "https://m.media-amazon.com/images/I/71v8GnJGV-L.jpg"
@@ -32,6 +34,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "Spare Battery",
     "images": [
       "https://m.media-amazon.com/images/I/71dw--B2z0L._AC_SL1500_.jpg"
@@ -48,6 +51,7 @@
     "accessoryType": "Battery"
   },
   {
+    "productType": "product",
     "name": "Sony Alpha A7 III",
     "images": [
       "https://media.the-digital-picture.com/Images/Other/Sony-a7-III/Sony-a7-III-Angle.jpg"
@@ -64,6 +68,7 @@
     "accessoryType": "Camera Bag"
   },
   {
+    "productType": "product",
     "name": "Fujifilm XF 35mm f/1.4 Lens",
     "images": [
       "https://m.media-amazon.com/images/I/81-3DZrWKhL.jpg"
@@ -80,6 +85,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "Camera Bag",
     "images": [
       "https://m.media-amazon.com/images/I/61XrwQRRDVL._AC_UX679_.jpg"
@@ -96,6 +102,7 @@
     "accessoryType": "Camera Bag"
   },
   {
+    "productType": "product",
     "name": "camera Olympus OM-D E-M10 Mark IV",
     "images": [
       "https://fotoruanopro.com/23387-large_default/olympus-e-m10-iv.jpg"
@@ -112,6 +119,7 @@
     "accessoryType": "Memory Card"
   },
   {
+    "productType": "product",
     "name": "Lente Panasonic Lumix G Vario 14-140mm",
     "images": [
       "https://m.media-amazon.com/images/I/81wmEhxRuVL.jpg"
@@ -128,6 +136,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "Professional Tripod",
     "images": [
       "https://m.media-amazon.com/images/I/71+wdVDWqTL._AC_SL1500_.jpg"
@@ -144,6 +153,7 @@
     "accessoryType": "Tripod"
   },
   {
+    "productType": "product",
     "name": "Camera Kodak PixPro AZ652",
     "images": [
       "https://m.media-amazon.com/images/I/81AGaoBvIlL._AC_UF1000,1000_QL80_.jpg"
@@ -160,6 +170,7 @@
     "accessoryType": "Memory Card"
   },
   {
+    "productType": "product",
     "name": "Canon EF-S 18-55mm f/3.5-5.6 IS II",
     "images": [
       "https://i1.adis.ws/i/canon/7_canon_ef-s-18-55mm-f3_5-5_6-is-ii_02f7e30131a440dfbb146bd77cc2969c?$block-hero-header-1by1-dt-jpg$"
@@ -176,6 +187,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "Godox TT685C Flash for Canon",
     "images": [
       "https://www.percyphoto.com/2842-large_default/godox-v860-iii-nikon-flash.jpg"
@@ -192,6 +204,7 @@
     "accessoryType": "Flash"
   },
   {
+    "productType": "product",
     "name": "Sony Cyber-shot DSC-RX100 VII",
     "images": [
       "https://assets.mmsrg.com/isr/166325/c1/-/pixelboxx-mss-79315557?x=1800&y=1800&format=jpg&quality=80&sp=yes&strip=yes&ex=1800&ey=1800&align=center&resizesource&unsharp=1.5x1+0.7+0.02"
@@ -208,6 +221,7 @@
     "accessoryType": "Camera Case"
   },
   {
+    "productType": "product",
     "name": "Nikon AF-S 24-70mm f/2.8G ED",
     "images": [
       "https://m.media-amazon.com/images/I/71MSr8qZxSL.jpg"
@@ -224,6 +238,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "SanDisk Extreme Pro 128GB Memory Card",
     "images": [
       "https://expertphotography.b-cdn.net/wp-content/uploads/2018/05/memory-card-microsd.jpg"
@@ -240,6 +255,7 @@
     "accessoryType": "Memory Card"
   },
   {
+    "productType": "product",
     "name": "Canon EOS 5D Mark IV",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Canon_EOS-5D-Mark-IV-03.jpg/1200px-Canon_EOS-5D-Mark-IV-03.jpg"
@@ -256,6 +272,7 @@
     "accessoryType": "Camera Bag"
   },
   {
+    "productType": "product",
     "name": "Sigma 35mm f/1.4 DG HSM Art Lens",
     "images": [
       "https://www.percyphoto.com/2771-large_default/sigma-35mm-f14-dg-dn-art-sony-montura-e.jpg"
@@ -272,6 +289,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "Camera Bag",
     "images": [
       "https://m.media-amazon.com/images/I/81DtAN13caL._AC_UF1000,1000_QL80_.jpg"
@@ -288,6 +306,7 @@
     "accessoryType": "Camera Bag"
   },
   {
+    "productType": "product",
     "name": "Panasonic Lumix GH5",
     "images": [
       "https://fotoruanopro.com/11991-large_default/lumix-gh5-12-60mm.jpg"
@@ -304,6 +323,7 @@
     "accessoryType": "Memory Card"
   },
   {
+    "productType": "product",
     "name": "Tamron SP 70-200mm f/2.8 Di VC USD G2 Lens",
     "images": [
       "https://www.orly.es/10613-large_default/tamron-sp-af-70-200mm-f28-di-ld-if-macro-objetivo-para-nikon-a001nii.jpg"
@@ -320,6 +340,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "Tripod Manfrotto 190XPROB",
     "images": [
       "https://cdn.manfrotto.com/media/catalog/product/cache/1e774dca205198565016e92bdb88ad55/m/k/mk190xpro4-bhq2.jpg"
@@ -336,6 +357,7 @@
     "accessoryType": "Tripod"
   },
   {
+    "productType": "product",
     "name": "Canon PowerShot G7 X Mark III",
     "images": [
       "https://i1.adis.ws/i/canon/3637C011_Powershot%20G7x%20mark%20iii%20IMG%204?w=1680&bg=gray95&fmt=jpg"
@@ -352,6 +374,7 @@
     "accessoryType": "Camera Case"
   },
   {
+    "productType": "product",
     "name": "Sony FE 24-70mm f/2.8 GM Lens",
     "images": [
       "https://fotoruanopro.com/33126-large_default/sony-24-70-mm-gm-ii-f28-fe-sel2470gm2.jpg"
@@ -368,6 +391,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "Spare Battery",
     "images": [
       "https://m.media-amazon.com/images/I/71tbt06vz2L._AC_SL1500_.jpg"
@@ -384,6 +408,7 @@
     "accessoryType": "Battery"
   },
   {
+    "productType": "product",
     "name": "Fujifilm X-T4",
     "images": [
       "https://fotografiarte.es/pro/7400-large_default/camara-fuji-xt4-comprar-fuji-xt4.jpg"
@@ -400,6 +425,7 @@
     "accessoryType": "Memory Card"
   },
   {
+    "productType": "product",
     "name": "Nikon AF-S 50mm f/1.8G Lens",
     "images": [
       "https://m.media-amazon.com/images/I/618OHWrYVsL.jpg"
@@ -416,6 +442,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "Flash Godox V860II-N",
     "images": [
       "https://visanta.com/62240-product_540/kit-flash-flash-godox-v860iii-para-nikon.jpg"
@@ -432,6 +459,7 @@
     "accessoryType": "Flash"
   },
   {
+    "productType": "product",
     "name": "Olympus PEN E-PL10",
     "images": [
       "https://m.media-amazon.com/images/I/71XY-Iz7QEL.jpg"
@@ -448,6 +476,7 @@
     "accessoryType": "Camera Case"
   },
   {
+    "productType": "product",
     "name": "Canon EF 85mm f/1.8 USM",
     "images": [
       "https://i1.adis.ws/i/canon/ef_85mm_f1.4l_is_usm-side-with-cap_1406aaa1939148709263db23c5a87c6c?$prod-gallery-1by1-jpg$"
@@ -464,6 +493,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "Spare Battery",
     "images": [
       "https://thumb.pccomponentes.com/w-530-530/articles/1039/10395443/1189-canon-lp-e6nh-bateria-para-camaras-canon.jpg"
@@ -480,6 +510,7 @@
     "accessoryType": "Battery"
   },
   {
+    "productType": "product",
     "name": "Sony Alpha 7C",
     "images": [
       "https://fotok.es/91931-thickbox_default/sony-a7-c-ilce-7c-50mm-f18.jpg"
@@ -496,6 +527,7 @@
     "accessoryType": "Memory Card"
   },
   {
+    "productType": "product",
     "name": "Fujifilm XF 16-55mm f/2.8 R LM WR Lens",
     "images": [
       "https://fotografiarte.es/pro/8175-large_default/fuji-16-55mm-f28.jpg"
@@ -512,6 +544,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "Camera Bag",
     "images": [
       "https://m.media-amazon.com/images/I/91oA2eQpiUL._AC_SL1500_.jpg"
@@ -528,6 +561,7 @@
     "accessoryType": "Camera Bag"
   },
   {
+    "productType": "product",
     "name": "Olympus OM-D E-M10 Mark IV",
     "images": [
       "https://m.media-amazon.com/images/I/71X49b21IIS.jpg"
@@ -544,6 +578,7 @@
     "accessoryType": "Memory Card"
   },
   {
+    "productType": "product",
     "name": "Panasonic Lumix G Vario 14-140mm Lens",
     "images": [
       "https://www.backmarket.es/cdn-cgi/image/format%3Dauto%2Cquality%3D75%2Cwidth%3D3840/https://d2e6ccujb3mkqf.cloudfront.net/2e6ca4de-1ef8-4f14-8bae-8301013309a2-1_e35eb4c1-eb96-427f-9fba-4259e4959081.jpg"
@@ -560,6 +595,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "Professional Tripod",
     "images": [
       "https://s.libertaddigital.com/2021/05/20/tripode-para-movil-kf-concept-tm2624l.jpg"
@@ -576,6 +612,7 @@
     "accessoryType": "Tripod"
   },
   {
+    "productType": "product",
     "name": "Kodak PixPro AZ401",
     "images": [
       "https://m.media-amazon.com/images/I/71mcXgTbfjL._AC_UF1000,1000_QL80_.jpg"
@@ -592,6 +629,7 @@
     "accessoryType": "Memory Card"
   },
   {
+    "productType": "product",
     "name": "Canon EF-M 22mm f/2 STM",
     "images": [
       "https://images.cashconverters.es/productslive/objetivo/canon-canon-ef-m-22mm-f2-stm_CC052_E647144-0_0.jpg"
@@ -608,6 +646,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "Flash Godox TT685S",
     "images": [
       "https://m.media-amazon.com/images/I/71FmcUcgg4L._AC_SL1500_.jpg"
@@ -624,6 +663,7 @@
     "accessoryType": "Flash"
   },
   {
+    "productType": "product",
     "name": "Sony Cyber-shot DSC-W800",
     "images": [
       "https://m.media-amazon.com/images/I/71wAfMq6lvL._AC_UF1000,1000_QL80_.jpg"
@@ -640,6 +680,7 @@
     "accessoryType": "Camera Case"
   },
   {
+    "productType": "product",
     "name": "Sigma 24-70mm f/2.8 DG OS HSM Art Lens",
     "images": [
       "https://www.sigma-photo.es/17-thickbox_default/sigma-24-70mm-f28-dg-dn-art.jpg"
@@ -656,6 +697,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "Camera Bag",
     "images": [
       "https://i.blogs.es/df3a94/the-bond-street/1366_2000.jpg"
@@ -672,6 +714,7 @@
     "accessoryType": "Camera Bag"
   },
   {
+    "productType": "product",
     "name": "Canon EOS Rebel T7i",
     "images": [
       "https://www.tecnologiaenoferta.com/wp-content/uploads/2018/03/1-17-800x800.jpg"
@@ -688,6 +731,7 @@
     "accessoryType": "Camera Bag"
   },
   {
+    "productType": "product",
     "name": "Tamron SP 24-70mm f/2.8 Di VC USD G2 Lens",
     "images": [
       "https://m.media-amazon.com/images/I/91gb4pz8Z6L.jpg"
@@ -704,6 +748,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "Memory Card SanDisk Ultra 64GB",
     "images": [
       "https://www.fotocasion.es/media/img/articulos/48846-tarjeta-micro-sd-64-gb-sandisk-FOTOCASION-OFERTA-DESCUENTO.jpg"
@@ -720,6 +765,7 @@
     "accessoryType": "Memory Card"
   },
   {
+    "productType": "product",
     "name": "Sony Alpha A6000",
     "images": [
       "https://dukefotografia.com/49858-thickbox_default/sony-alpha-a6000-16-50mm-funda-tarjeta-16gb-ilce-6000-sony.jpg"
@@ -736,6 +782,7 @@
     "accessoryType": "Camera Case"
   },
   {
+    "productType": "product",
     "name": "Fujifilm XF 18-55mm f/2.8-4 R LM OIS Lens",
     "images": [
       "https://m.media-amazon.com/images/I/71eIBni4g+L.jpg"
@@ -752,6 +799,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "Spare Battery",
     "images": [
       "https://www.kamera-express.nl/media/e9963dbc-de19-4518-850d-5d4bee0babca/12224596_1.jpg"
@@ -768,6 +816,7 @@
     "accessoryType": "Battery"
   },
   {
+    "productType": "product",
     "name": "Canon PowerShot SX620 HS",
     "images": [
       "https://dukefotografia.com/49984/canon-powershot-sx620-hs-roja-canon.jpg"
@@ -784,6 +833,7 @@
     "accessoryType": "Camera Case"
   },
   {
+    "productType": "product",
     "name": "Nikon AF-P DX NIKKOR 10-20mm f/4.5-5.6G VR Lens",
     "images": [
       "https://photographylife.com/wp-content/uploads/2017/05/Nikon-AF-P-DX-NIKKOR-10-20mm-f4.5-5.6G-VR.jpg"
@@ -800,6 +850,7 @@
     "accessoryType": null
   },
   {
+    "productType": "product",
     "name": "Flash Godox V860II-C",
     "images": [
       "https://cdn.profoto.com/cdn/052f9bd/globalassets/inriver/resources/901240_a_profoto-a10-profile-right.jpg?width=2840&quality=60&format=jpg"
@@ -816,6 +867,7 @@
     "accessoryType": "Flash"
   },
   {
+    "productType": "product",
     "name": "Sony Cyber-shot DSC-HX80",
     "images": [
       "https://img.pccomponentes.com/articles/33/335303/5996-sony-hx80-182mp-wifi-bluetooth-negra-caracteristicas.jpg"

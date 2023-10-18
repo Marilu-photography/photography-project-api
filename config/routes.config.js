@@ -12,7 +12,7 @@ const ordersController = require('../controllers/orders.controller');
 
 
 // MISC
-router.get('/editor/:id',authMiddleware.isAuthenticated, upload.single('imageUrl'), imagesController.editorTool);
+router.get('/editor/:id',authMiddleware.isAuthenticated, upload.array('images'), imagesController.editorTool);
 
 //SEARCH ROUTE
 router.get('/search', productsController.search);
@@ -41,9 +41,9 @@ router.post('/profile/:userId', authMiddleware.isAuthenticated, upload.single('a
 
 // IMAGES
 router.get('/images', imagesController.imagesList);
-router.post('/images/upload', authMiddleware.isAuthenticated, upload.single('imageUrl'), imagesController.createImage);
+router.post('/images/upload', authMiddleware.isAuthenticated, upload.array('images'), imagesController.createImage);
 router.delete('/images/:id/', authMiddleware.isAuthenticated, imagesController.deleteImage);
-router.post('/images/:id/edited-image', authMiddleware.isAuthenticated,  upload.single('imageUrl'), imagesController.editImage);
+router.post('/images/:id/edited-image', authMiddleware.isAuthenticated,  upload.array('images'), imagesController.editImage);
 
 
 // COMMENTS

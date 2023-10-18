@@ -34,12 +34,7 @@ module.exports.editorTool = (req, res, next) => {
         .then(image => res.status(StatusCodes.OK).json(image))
         .catch(next)
 }
-// module.exports.editImage = (req, res, next) => {
-//     const { editedImageUrl } = req.body;
-//     Image.findByIdAndUpdate(req.params.id, { editedImageUrl }, { new: true })
-//         .then(image => res.status(StatusCodes.OK).json(image))
-//         .catch(next);
-// }
+
 
 module.exports.editImage = (req, res, next) => {
     const { editedImageUrl } = req.body;

@@ -5,7 +5,6 @@ const { StatusCodes } = require('http-status-codes');
 module.exports.getCurrentUser = (req, res, next) => {
 User.findById(req.currentUser)
 .then(user => {
-  console.log(user.order)
     if (!user) {
         next(createHttpError(StatusCodes.NOT_FOUND, 'User not found'))
     } else {

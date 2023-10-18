@@ -34,8 +34,7 @@ const productSchema = new mongoose.Schema({
     enum: BRAND,
   },
   model: {
-    String,
-    availability: Boolean
+    type: String,
   },
 
   cameraType: {

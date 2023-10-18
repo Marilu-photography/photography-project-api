@@ -79,6 +79,8 @@ module.exports.edit = (req, res, next) => {
     .catch(next);
 }
 
+
+
 module.exports.deleteProduct = (req, res, next) => {
   Product.findByIdAndDelete(req.params.id)
     .then(() => res.status(StatusCodes.NO_CONTENT).send())

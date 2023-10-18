@@ -1,48 +1,48 @@
 [
     {
-      "name": "Image 1",
-      "images": ["https://madridando.com/wp-content/uploads/2018/07/gran-via-noche.jpeg"],
-      "description": "Image 1 Description",
+      "name": "Friendship is Magic",
+      "images": ["https://res.cloudinary.com/dy2v6iwv8/image/upload/v1697617343/marilu-photography/cld-sample.jpg"],
+      "description": "Friendship is Magic #girl #dog #friendship",
       "price": 9.99,
       "productType": "image",
       "author": "AnnieLei"
     },
     {
-      "name": "Image 2",
-      "images": ["https://madridando.com/wp-content/uploads/2018/07/gran-via-noche.jpeg"],
-      "description": "Image 2 Description",
+      "name": "Calm and cold",
+      "images": ["https://res.cloudinary.com/dy2v6iwv8/image/upload/v1697617343/marilu-photography/cld-sample-2.jpg"],
+      "description": "Calm and cold Landscape #calm #snow #mountain",
       "price": 14.99,
       "productType": "image",
       "author": "NikkiSixx"
     },
     {
-      "name": "Image 3",
-      "images": ["https://www.flormoments.com/blog/wp-content/uploads/schema-and-structured-data-for-wp/QUE-ES-UNA-FLOR-PRESERVADA-Y-COMO-SE-HACE-1200x900.jpg"],
-      "description": "Image 3 Description",
+      "name": "Energy",
+      "images": ["https://res.cloudinary.com/dy2v6iwv8/image/upload/v1697617343/marilu-photography/cld-sample-3.jpg"],
+      "description": "Three people jumping in the air #jump #energy #people",
       "price": 19.99,
       "productType": "image",
       "author": "GregoryCrewdson"
     },
     {
-      "name": "Image 4",
-      "images": ["https://www.archisevilla.org/wp-content/uploads/2016/04/amigos.jpg"],
-      "description": "Image 4 Description",
+      "name": "Brunch time",
+      "images": ["https://res.cloudinary.com/dy2v6iwv8/image/upload/v1697617343/marilu-photography/cld-sample-4.jpg"],
+      "description": "Brunch time #brunch #food #friends",
       "price": 12.99,
       "productType": "image",
       "author": "AndreasGursky"
     },
     {
-      "name": "Image 5",
-      "images": ["https://www.archisevilla.org/wp-content/uploads/2016/04/amigos.jpg"],
-      "description": "Image 5 Description",
+      "name": "The power of the simple things",
+      "images": ["https://res.cloudinary.com/dy2v6iwv8/image/upload/v1697617343/marilu-photography/cld-sample-5.jpg"],
+      "description": "The power of the simple things #simple #power #shoe",
       "price": 12.99,
       "productType": "image",
       "author": "JoelMeyerowitz"
     },
     {
-      "name": "Image 6",
-      "images": ["https://www.archisevilla.org/wp-content/uploads/2016/04/amigos.jpg"],
-      "description": "Image 6 Description",
+      "name": "Having fun",
+      "images": ["https://res.cloudinary.com/dy2v6iwv8/image/upload/v1697617343/marilu-photography/amigos.jpg"],
+      "description": "Having fun with friends #fun #friends #smile",
       "price": 12.99,
       "productType": "image",
       "author": "AnnieLei"

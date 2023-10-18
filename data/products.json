@@ -54,7 +54,10 @@
     "productType": "product",
     "name": "Sony Alpha A7 III",
     "images": [
-      "https://media.the-digital-picture.com/Images/Other/Sony-a7-III/Sony-a7-III-Angle.jpg"
+      "https://media.the-digital-picture.com/Images/Other/Sony-a7-III/Sony-a7-III-Angle.jpg",
+      "https://res.cloudinary.com/dy2v6iwv8/image/upload/v1697617343/marilu-photography/m78dyvreqdfdyxgnuewb.jpg",
+      "https://res.cloudinary.com/dy2v6iwv8/image/upload/v1697617343/marilu-photography/uefgr2kwutbd3klohzkh.jpg",
+      "https://res.cloudinary.com/dy2v6iwv8/image/upload/v1697617343/marilu-photography/rpbgtdkipyq9wouiy1pb.jpg"
     ],
     "description": "The Sony Alpha A7 III is a mirrorless full-frame camera that excels in both photography and videography. Featuring a 24.2-megapixel sensor, 4K video capability, and impressive low-light performance, it's a favorite among enthusiasts and professionals alike for its compact design and exceptional image quality.",
     "price": 2299.99,

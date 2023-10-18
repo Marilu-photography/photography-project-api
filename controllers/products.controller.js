@@ -67,11 +67,16 @@ module.exports.productDetail = (req, res, next) => {
 
 module.exports.edit = (req, res, next) => {
 
+  const newImages = req.files ? req.files.map(file => file.path) : []
+  const prevImages = req.body.images ? req.body.images.split(',') : [];
+
   const data = {
     ...req.body,
     owner: req.currentUser,
-    images: req.files ? req.files.map(file => file.path) : undefined,
+    images: [...prevImages, ...newImages],
   };
+
+  console.log(data)
 
 
   Product.findByIdAndUpdate(req.params.id, data, { new: true })

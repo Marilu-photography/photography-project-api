@@ -20,7 +20,7 @@ router.get('/search', productsController.search);
 // PRODUCTS
 router.post('/create', authMiddleware.isAuthenticated, upload.array('images'), productsController.create);
 router.get('/', productsController.list);
-router.patch('/products/:id', authMiddleware.isAuthenticated,upload.array('images'), productsController.edit);
+router.patch('/products/:id', authMiddleware.isAuthenticated,upload.array('imagesFiles'), productsController.edit);
 router.get('/products/:id', productsController.productDetail);
 router.delete('/products/:id/', authMiddleware.isAuthenticated, productsController.deleteProduct);
 router.post('/products/checkout',authMiddleware.isAuthenticated, productsController.createCheckoutSession);

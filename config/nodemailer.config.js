@@ -15,9 +15,9 @@ const transporter = nodemailer.createTransport({
 });
 
 module.exports.sendActivationEmail = (user) => {
-  const activationLink = `${process.env.APP_HOST}/login?activate=${user.id}`; 
+  // const activationLink = `${process.env.APP_HOST}/login?activate=${user.id}`; 
 
-  // const activationLink = `https://onclick-photography.netlify.app/login?activate=${user.id}`;
+  const activationLink = `https://onclick-photography.netlify.app/login?activate=${user.id}`;
 
 
 
@@ -43,7 +43,8 @@ module.exports.sendActivationEmail = (user) => {
 
 module.exports.sendInvoice = (user, order) => {
 
-  const profileLink = `${process.env.APP_HOST}/profile/${user.id}`; 
+  // const profileLink = `${process.env.APP_HOST}/profile/${user.id}`; 
+  const profileLink = `https://onclick-photography.netlify.app/profile/${user.id}`; 
 
   const userData = {
     name: user.name,
@@ -64,7 +65,7 @@ module.exports.sendInvoice = (user, order) => {
 };
 
 module.exports.sendStatusMail = (user, order) => {
-  const profileLink = `${process.env.APP_HOST}/profile/${user.id}`; 
+  const profileLink = `https://onclick-photography.netlify.app/profile/${user.id}`; 
 
   const userData = {
     name: user.name,

@@ -155,6 +155,7 @@ const lineProducts = [...lineItems, ...lineImages];
         cancel_url: `${process.env.APP_HOST}/cart?canceled=true`,
       }).then(session => {
         res.json({ url: session.url, orderId: order._id });
+        console.log(session.url)
       })
 
     })

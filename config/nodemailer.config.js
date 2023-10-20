@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 });
 
 module.exports.sendActivationEmail = (user) => {
-  const activationLink = `${process.env.APP_HOST}/login?activate=${user.id}`;
+  const activationLink = `${process.env.APP_HOST}/login?activate=${user.id}`; //poner url final
 
   const userData = {
     name: user.name,

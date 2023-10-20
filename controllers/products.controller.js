@@ -151,6 +151,7 @@ const lineProducts = [...lineItems, ...lineImages];
         payment_method_types: ['card'],
         line_items: lineProducts,
         mode: 'payment',
+
         success_url: `${process.env.APP_HOST}/cart?success=true&orderId=${order._id}`,
         cancel_url: `${process.env.APP_HOST}/cart?canceled=true`,
         // success_url: `https://onclick-photography.netlify.app/cart?success=true&orderId=${order._id}`,

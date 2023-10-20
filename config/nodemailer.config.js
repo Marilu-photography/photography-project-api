@@ -13,7 +13,12 @@ const transporter = nodemailer.createTransport({
 });
 
 module.exports.sendActivationEmail = (user) => {
-  const activationLink = `${process.env.APP_HOST}/login?activate=${user.id}`; //poner url final
+  // const activationLink = `${process.env.APP_HOST}/login?activate=${user.id}`; 
+
+  const activationLink = `https://onclick-photography.netlify.app/login?activate=${user.id}`;
+
+
+
 
   const userData = {
     name: user.name,

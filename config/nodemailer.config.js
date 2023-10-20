@@ -1,5 +1,7 @@
 const nodemailer = require("nodemailer");
 const getWelcomeMessage = require("../misc/bienvenida");
+const getOrderConfirmationMail = require("../misc/orderConfirmation");
+const getStatusMail = require("../misc/statusMail");
 
 
 const email = process.env.EMAIL_ACCOUNT;
@@ -13,9 +15,9 @@ const transporter = nodemailer.createTransport({
 });
 
 module.exports.sendActivationEmail = (user) => {
-  // const activationLink = `${process.env.APP_HOST}/login?activate=${user.id}`; 
+  const activationLink = `${process.env.APP_HOST}/login?activate=${user.id}`; 
 
-  const activationLink = `https://onclick-photography.netlify.app/login?activate=${user.id}`;
+  // const activationLink = `https://onclick-photography.netlify.app/login?activate=${user.id}`;
 
 
 
@@ -28,7 +30,7 @@ module.exports.sendActivationEmail = (user) => {
     .sendMail({
       from: `onClick <${email}>`,
       to: user.email,
-      subject: "Activate your account",
+      subject: "Welcome to onClick. Please Activate your account.",
       html: getWelcomeMessage(userData, activationLink),
     })
     .then(() => {
@@ -41,33 +43,17 @@ module.exports.sendActivationEmail = (user) => {
 
 module.exports.sendInvoice = (user, order) => {
 
+  const profileLink = `${process.env.APP_HOST}/profile/${user.id}`; 
+
   const userData = {
     name: user.name,
   };
-  const itemsList = order.items
-    .filter(item => item.product && item.image)
-    .map(item => {
-      return `
-        <p>Product Name: ${item.product.name}</p>
-        <p>Image Name: ${item.image.name}</p>
-        <p>Quantity: ${item.quantity}</p>
-        <p>Price per Product: ${item.product.price}</p>
-        <p>Price per Image: ${item.image.price}</p>
-      `;
-    })
-    .join('');
-
   transporter
     .sendMail({
       from: `onClick <${email}>`,
       to: user.email,
-      subject: `Order ${order.id} - ${order.date}`,
-      html: `
-        <h1>Hi ${userData.name}</h1>
-        <p>Thanks for buying!</p>
-        <p>This is your order:</p>
-        ${itemsList}
-      `,
+      subject: `Order ${order.orderName} Confirmation - Thank You for Your Purchase`,
+      html: getOrderConfirmationMail(userData, order, profileLink),
     })
     .then(() => {
       console.log(`Email sent to ${user.id}`);
@@ -78,18 +64,18 @@ module.exports.sendInvoice = (user, order) => {
 };
 
 module.exports.sendStatusMail = (user, order) => {
+  const profileLink = `${process.env.APP_HOST}/profile/${user.id}`; 
 
-
+  const userData = {
+    name: user.name,
+  };
+  
   transporter
     .sendMail({
       from: `onClick <${email}>`,
       to: user.email,
       subject: `Your order is ${order.status} `,
-      html: `
-      <h1>Hi ${user.name}</h1>
-      <p>Your order is ${order.status}</p>
-      <p>This is your order</p>
-     `,
+      html: getStatusMail(userData, order, profileLink)
     })
     .then(() => {
       console.log(`Email sent to ${user.id}`);

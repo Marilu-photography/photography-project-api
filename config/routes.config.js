@@ -55,4 +55,11 @@ router.delete('/comments/delete/:id', authMiddleware.isAuthenticated, miscContro
 router.get('/orders', authMiddleware.isAuthenticated, ordersController.listOrders);
 router.post('/orders/update-status/:id', authMiddleware.isAuthenticated, ordersController.updateOrderStatus);
 
+// LIKES
+router.post('/likes/:userId/:imageId', authMiddleware.isAuthenticated, miscController.likeCreate )
+router.delete('/likes/:userId/:imageId', authMiddleware.isAuthenticated, miscController.likeDelete )
+router.get('/likes/list/', miscController.listLikes);
+
+
+
 module.exports = router;

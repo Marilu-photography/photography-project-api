@@ -39,6 +39,13 @@ imageSchema.virtual('order', {
     justOne: false,
   });
 
+  imageSchema.virtual("like", {
+    ref: "Like",
+    localField: "_id",
+    foreignField: "image",
+    justOne: false,
+  });
+
 const Image = mongoose.model('Image', imageSchema);
 
 module.exports = Image;

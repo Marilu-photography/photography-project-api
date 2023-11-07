@@ -90,6 +90,13 @@ userSchema.virtual("order", {
   justOne: false,
 });
 
+userSchema.virtual("like", {
+  ref: "Like",
+  localField: "_id",
+  foreignField: "user",
+  justOne: false,
+});
+
 userSchema.pre("save", function (next) {
   const user = this;
 

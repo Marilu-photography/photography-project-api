@@ -16,7 +16,12 @@ module.exports.createImage = (req, res, next) => {
 
 module.exports.imagesList = (req, res, next) => {
     Image.find()
-        .populate('author')
+    .populate({
+      path: 'author',
+      populate: [
+        { path: 'like' },
+      ]
+    })
         .then((images) => {
             res.status(StatusCodes.OK).json(images);
         })
